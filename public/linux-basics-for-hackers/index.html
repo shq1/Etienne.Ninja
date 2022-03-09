@@ -1,0 +1,351 @@
+<!doctype html>
+
+<html lang="en" class="h-100">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="generator" content="Hugo 0.80.0" />
+  <link rel="stylesheet" href="https://etienne.ninja/css/bootstrap.min.css">
+  
+  
+  <title>Linux basics for hackers | Blogue d&#39;Étienne</title>
+  <style>
+.container {
+  max-width: 800px;
+}
+#nav a {
+  font-weight: bold;
+  color: inherit;
+}
+#nav a.nav-link-active {
+  background-color: #212529;
+  color: #fff;
+}
+#nav-border {
+  border-bottom: 1px solid #212529;
+}
+#main {
+  margin-top: 1em;
+  margin-bottom: 4em;
+}
+#home-jumbotron {
+  background-color: inherit;
+}
+#footer .container {
+  padding: 1em 0;
+}
+#footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+.font-125 {
+  font-size: 125%;
+}
+.tag-btn {
+  margin-bottom: 0.3em;
+}
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  background-color: transparent;
+  border-radius: 0;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+img,
+iframe,
+embed,
+video,
+audio {
+  max-width: 100%;
+}
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  width: initial;
+}
+</style>
+</head>
+  <body class="d-flex flex-column h-100">
+    <div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+  
+  
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/"><i data-feather="home"></i> Accueil</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/post/"><i data-feather="edit"></i> Articles</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/book/"><i data-feather="book"></i> Livres</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/tags/"><i data-feather="tag"></i> Mots clés</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/about/"><i data-feather="smile"></i> À propos</a>
+  
+  </nav>
+</div>
+
+    <div class="container">
+      <main id="main">
+        
+
+
+
+<br />
+
+
+<div class="card mb-3 border-0">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="cover.jpeg" class="card-img">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title">Linux basics for hackers</h2>
+        <p class="card-text ">Auteur: OccupyTheWeb</p> 
+        <p class="card-text ">Ma note: 8/10</p> 
+        <p class="card-text">
+
+<i data-feather="calendar"></i> <time datetime="2021-03-07">Mar 7, 2021</time>
+
+
+  <br>
+  <i data-feather="tag"></i>
+  
+  
+  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://etienne.ninja/tags/s%C3%A9curit%C3%A9-201">Sécurité 201</a>
+  
+</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<h2>Mes highlights</h2> 
+<br>
+
+
+<hr>
+<p>locate uses a database that is usually only updated once a day, so if you just created a file a few minutes or a few hours ago, it might not appear in this list until the next day.</p>
+<hr>
+<p>The ? wildcard is used to represent a single character, so a search for ?at would find hat, cat, and bat but not what, because at in this filename is preceded by two letters</p>
+<hr>
+<p>search for [c,b]at would match cat and bat but not hat or what</p>
+<hr>
+<p>asterisk (*), which matches any character(s) of any length, from none to an unlimited number of characters. A search for *at, for example, would find cat, hat, what, and bat.</p>
+<hr>
+<p>With less, you can not only scroll through a file at your leisure, but you can also filter it for terms</p>
+<hr>
+<p>If you press the forward slash (/) key, less will let you search for terms in the file</p>
+<hr>
+<p>iwconfig command to gather crucial information for wireless hacking such as the adapter’s IP address, its MAC address, what mode it’s in, and more</p>
+<hr>
+<p>ifconfig followed by the interface you want to reassign and the new IP address you want assigned to that interface</p>
+<hr>
+<p>To request an IP address from DHCP, simply call the DHCP server with the command dhclient</p>
+<hr>
+<p>apt-cache command to search the apt cache, or the place it stores the package names</p>
+<hr>
+<p>The remove command doesn’t remove the configuration files</p>
+<hr>
+<p>Linux automatically assigns all files and directories default permissions of 666 and 777, respectively. This means that, by default, you won’t be able to execute a file immediately after downloading it.</p>
+<hr>
+<p>Running the ps command with the options aux will show all processes running on the system for all users</p>
+<hr>
+<p>This is where the top command comes in handy because it displays the processes ordered by resources used, starting with the largest</p>
+<hr>
+<p>nice  -n -10 /bin/slowprocess This command would increment the nice value by -10, increasing its priority and allocating it more resources.</p>
+<hr>
+<p>The at command is a daemon—a background process—useful for scheduling a job to run once at some point in the future. The crond is more suited for scheduling tasks to occur every day, week, or month,</p>
+<hr>
+<p>make the changes permanent, you need to use the export command. This command will export the new value from your current environment (the bash shell) to the rest of the system</p>
+<hr>
+<p>If you want to delete this new variable, or any variable, use the unset command</p>
+<hr>
+<p>Lossy compression is very effective in reducing the size of files, but the integrity of the information is lost</p>
+<hr>
+<p>You can then extract those files from the tarball using the tar command with the -x (extract)</p>
+<hr>
+<p>In general, compress is the fastest, but the resultant files are larger; bzip2 is the slowest, but the resultant files are the smallest; and gzip falls somewhere in between</p>
+<hr>
+<p>The bs option allows you to determine the block size (the number of bytes read/written per block) of the data being copied. By default, it is set to 512 bytes, but it can be changed to speed up the process. Typically, this would be set to the sector size of the device, most often 4KB (4,096 bytes)</p>
+<hr>
+<p>general rule, internal hard drives are mounted at /mnt, and external USB devices such as flash drives and external USB hard drives are mounted at /media</p>
+<hr>
+<p>The filesystems that are mounted on a system are kept in a file at /etc/fstab (short for filesystem table)</p>
+<hr>
+<p>command df (for disk free) will provide us with basic information on any hard disks or mounted devices</p>
+<hr>
+<p>fsck command (short for filesystem check) checks the filesystem for errors and repairs the damage, if possible, or else puts the bad area into a bad blocks table to mark it as bad</p>
+<hr>
+<p>the rsyslog.conf file comes well documented with numerous comments explaining its use.</p>
+<hr>
+<p>delete the file and overwrite it several times, making it much harder to recover. Lucky for us, Linux has a built­in command, appropriately named shred, for just this purpose.</p>
+<hr>
+<p>shred will delete the file and overwrite it several times—by default, shred overwrites four times</p>
+<hr>
+<p>To disable all logging, the hacker could simply stop the rsyslog daemon</p>
+<hr>
+<p>the most widely used Linux SSH service is OpenSSH, which is installed on nearly every Linux distribution</p>
+<hr>
+<p>fork of the MySQL database software called “Maria” that is committed to keeping this software and its subsequent versions open source.</p>
+<hr>
+<p>what hops a packet might make between you and the destination, you can use the traceroute command</p>
+<hr>
+<p>tradeoff is that surfing via the Tor browser can be a lot slower;</p>
+<hr>
+<p>The websites that make up the dark web require anonymity, so they allow access only through the Tor browser, and they have addresses ending in .onion for their top­level domain (TLD)</p>
+<hr>
+<p>use more than one proxy, in a strategy known as a proxy chain</p>
+<hr>
+<p>tool called proxychains that you can set up to obscure your traffic</p>
+<hr>
+<p>proxychains defaults to using Tor if you don’t enter any proxies of your own</p>
+<hr>
+<p>the free proxies are likely selling your IP address and browsing history</p>
+<hr>
+<p>iwlist. For our purposes, we’ll use the scan action to see all the Wi­Fi APs in your area.</p>
+<hr>
+<p>Monitor mode is similar to promiscuous mode on wired network cards.</p>
+<hr>
+<p>When they reauthenticate, you can capture the hash of their password that is exchanged in the WPA2­PSK four­way handshake</p>
+<hr>
+<p>Bluetooth protocol stack called BlueZ that we’ll use to scan for Bluetooth signals.</p>
+<hr>
+<p>hciconfig This tool operates very similarly to ifconfig in Linux, but for Bluetooth devices.</p>
+<hr>
+<p>BlueZ provides the sdptool tool for browsing a device for the services it provides. It is also important to note that the device does not have to be in discovery mode to be scanned</p>
+<hr>
+<p>In some systems, to add a driver, you have to rebuild, compile, and reboot the entire kernel, but Linux has the capability of adding some modules to the kernel without going through that entire process. These modules are referred to as loadable kernel modules, or LKMs.</p>
+<hr>
+<p>uname -a</p>
+<hr>
+<p>cat command on the /proc/version</p>
+<hr>
+<p>sysctl command to tune kernel option</p>
+<hr>
+<p>lsmod command from the insmod suite to list the installed modules in the kernel</p>
+<hr>
+<p>learn more about any of the kernel modules, we can use the modinfo command</p>
+<hr>
+<p>A major advantage of using modprobe instead of insmod is that modprobe understands dependencies, options, and installation and removal procedures</p>
+<hr>
+<p>dmesg command, which prints out the message buffer from the kernel</p>
+<hr>
+<p>LKMs</p>
+<hr>
+<p>The cron daemon checks the cron table for which commands to run at specified time</p>
+
+
+
+      </main>
+    </div>
+    
+    <script src="https://etienne.ninja/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+
+    
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+  integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+
+    
+  
+
+  </body>
+</html>

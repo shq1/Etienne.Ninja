@@ -1,0 +1,438 @@
+<!doctype html>
+
+<html lang="en" class="h-100">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="generator" content="Hugo 0.80.0" />
+  <link rel="stylesheet" href="https://etienne.ninja/css/bootstrap.min.css">
+  
+  
+  <title>Microservices Security in Action | Blogue d&#39;Étienne</title>
+  <style>
+.container {
+  max-width: 800px;
+}
+#nav a {
+  font-weight: bold;
+  color: inherit;
+}
+#nav a.nav-link-active {
+  background-color: #212529;
+  color: #fff;
+}
+#nav-border {
+  border-bottom: 1px solid #212529;
+}
+#main {
+  margin-top: 1em;
+  margin-bottom: 4em;
+}
+#home-jumbotron {
+  background-color: inherit;
+}
+#footer .container {
+  padding: 1em 0;
+}
+#footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+.font-125 {
+  font-size: 125%;
+}
+.tag-btn {
+  margin-bottom: 0.3em;
+}
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  background-color: transparent;
+  border-radius: 0;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+img,
+iframe,
+embed,
+video,
+audio {
+  max-width: 100%;
+}
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  width: initial;
+}
+</style>
+</head>
+  <body class="d-flex flex-column h-100">
+    <div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+  
+  
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/"><i data-feather="home"></i> Accueil</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/post/"><i data-feather="edit"></i> Articles</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/book/"><i data-feather="book"></i> Livres</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/tags/"><i data-feather="tag"></i> Mots clés</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/about/"><i data-feather="smile"></i> À propos</a>
+  
+  </nav>
+</div>
+
+    <div class="container">
+      <main id="main">
+        
+
+
+
+<br />
+
+
+<div class="card mb-3 border-0">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="cover.jpeg" class="card-img">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title">Microservices Security in Action</h2>
+        <p class="card-text ">Auteur: Prabath Siriwardena</p> 
+        <p class="card-text ">Ma note: 10/10</p> 
+        <p class="card-text">
+
+<i data-feather="calendar"></i> <time datetime="2021-03-07">Mar 7, 2021</time>
+
+
+  <br>
+  <i data-feather="tag"></i>
+  
+  
+  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://etienne.ninja/tags/s%C3%A9curit%C3%A9-201">Sécurité 201</a>
+  
+</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<h2>Mes highlights</h2> 
+<br>
+
+
+<hr>
+<p>Each microservice runs in its own container, and as a best practice, the container has to be an immutable server.3 In other words, after the container has spun up, it shouldn’t change any of the files in its filesystem or maintain any runtime state within the container itself.</p>
+<hr>
+<p>You need a way to verify that the user context passed among microservices isn’t deliberately modified</p>
+<hr>
+<p>This architecture, which enables the various components in a system to pick the technology stack that is best for them, is known as a polyglot architecture.</p>
+<hr>
+<p>In a microservices deployment based on containers, audit logs aren’t kept at each node that runs the microservice; they’re published in some kind of a distributed tracing system like Jaeger or Zipkin</p>
+<hr>
+<p>Most proxy servers support two modes of operation with respect to TLS: TLS bridging and TLS tunneling. TLS bridging terminates the first TLS connection</p>
+<hr>
+<p>The API gateway centrally enforces security for all the requests entering the microservices deployment, including authentication, authorization, throttling, and message content validation for known security threats</p>
+<hr>
+<p>The OAuth 2.0 security token represents both the third-party appli-cation and the user who delegated access to the third-party application to access an API on their behalf.</p>
+<hr>
+<p>The API gateway terminates all the client connections at the edge</p>
+<hr>
+<p>User context carries basic information about the end user, and client context carries infor-mation about the client application</p>
+<hr>
+<p>how do you pass the user context to the upstream microser-vices? You have a couple of options: pass the user context in an HTTP header, or cre-ate a JWT with the user data</p>
+<hr>
+<p>with JWT, you have an assurance that a man in the mid-dle can’t change its content and go undetected, because the issuer of the JWT signs it.</p>
+<hr>
+<p>three common ways to secure communications among services in a micro-services deployment: trust the network, mTLS, and JWTs.</p>
+<hr>
+<p>Challenges in mTLS include bootstrapping trust and provisioning keys/certificates to workloads/microservices, key revocation, key rotation, and key monitoring</p>
+<hr>
+<p>Each microservice has its own public/private key pair, and the private key is used to sign the JWT.</p>
+<hr>
+<p>Each microservice talks to a centralized PDP to authorize each request it receives.</p>
+<hr>
+<p>the calling microservice can embed that JWT in the new JWT it creates to make a nested JWT (if JWT-based authentication is used among microservices) or pass the original JWT as-is, as an HTTP header (if mTLS is being used among microservices).</p>
+<hr>
+<p>in a single trust domain, all the microservices trust one STS and accept only security tokens issued by that STS.</p>
+<hr>
+<p>The -u flag provided to curl instructs it to create a basic authentication header and send it to the authorization server as part of the HTTP request</p>
+<hr>
+<p>we chose OAuth 2.0 over protocols such as basic authentication and mTLS to secure your resource server</p>
+<hr>
+<p>In the case of the client_credentials grant type, the authorization server validates the Basic authentication header and issues an access token if it’s valid.</p>
+<hr>
+<p>Most of the OAuth deployments we see today use bearer tokens.</p>
+<hr>
+<p>The client_credentials grant type is good when the client application doesn’t need to worry about end users.
+If it has to, it should pick an appropriate grant type. The client_credentials grant type is used mainly for system-to-system authentication.</p>
+<hr>
+<p>@Enable-WebSecurity</p>
+<hr>
+<p>A privilege describes the actions you’re permitted to perform on a resource</p>
+<hr>
+<p>privilege is mapped to a scope</p>
+<hr>
+<p>instead of refusing to issue an access token, the server issues an access token bound to the scopes that you’re entitled to.</p>
+<hr>
+<p>In an ideal world, the microservices developer should worry only about the busi-ness functionality of a microservice, and the rest should be handled by specialized components with less hassle. The API Gateway and Service Mesh are two architectural patterns that help us reach that ideal.</p>
+<hr>
+<p>API Gateway deals with north/south traffic, while the Ser-vice Mesh deals with east/west traffic</p>
+<hr>
+<p>One key aspect of microservices best practices is the single responsibility principle.</p>
+<hr>
+<p>An API gateway helps in decoupling security from a microservice</p>
+<hr>
+<p>None of us likes having to authenticate into an application again and again to perform operations. Therefore, if basic authentication is used, the application has to retain this information for long durations of time.
+The longer this information is retained, the higher the chance of compromise.</p>
+<hr>
+<p>After an application gets access to the username and password of a user, it can do everything that user can do with the microservice. In addition to accessing the microservice, the application can do anything with those credentials, even on other systems.</p>
+<hr>
+<p>Then again, unlike basic authentication (where you send your password over the wire), when you use mTLS, the corresponding private key never leaves its owner—or is never passed over the wire.
+That’s the main advantage mTLS has over basic authentication.</p>
+<hr>
+<p>mTLS fails to meet access delegation requirements we discussed in section 3.2.2 in a microservices deployment</p>
+<hr>
+<p>mTLS is mostly used to secure communication between a client application and a microservice, or communications among microservices. In other words, mTLS is mostly used to secure communications among systems.</p>
+<hr>
+<p>You must properly understand the audience of your microservices through their characteristics and desires:
+ Who—Ensure that only permitted entities are granted access to your resources  What purpose—Ensure that the permitted entities can perform only what they’re allowed to perform on your resources  How long—Ensure that access is granted for only the desired period</p>
+<hr>
+<p>token introspection</p>
+<hr>
+<p>When we use the OAuth 2.0 client_credentials grant type, the value of sub is the same as the value of client_id</p>
+<hr>
+<p>An authorization server, unlike other services in an organization, usually is managed by a separate group of people who have special privileges because of the server’s sensitivity.</p>
+<hr>
+<p>You may think that you’re burdening the microservice with extra responsibilities by expecting it to verify the client through mTLS. But mTLS verification happens at the Transport layer of the microservice and doesn’t propagate up to the Application layer.</p>
+<hr>
+<p>An access token can be a reference token or a self-contained token (JWT)</p>
+<hr>
+<p>The same-origin policy exists to pre-vent a malicious script on one website from accessing data on other websites uninten-tionally. The same-origin policy applies only to data access, not to CSS, images, and scripts, so you could write web pages that consist of links to CSS, images, and scripts of other origins. Figure 4.4 illustrates this scenario.</p>
+<hr>
+<p>OpenID Connect is an identity layer built on top of OAuth 2.0. Most SPAs use OpenID Connect to authenticate users.</p>
+<hr>
+<p>Vertical scaling increases the computing power on which our software runs, such as increasing the memory and CPU capacity of the corresponding servers.</p>
+<hr>
+<p>horizontal scaling, we scale our deployment by adding more virtual machines</p>
+<hr>
+<p>quota, such as 200 requests per second, and to enforce this quota at the API gateway</p>
+<hr>
+<p>regular OAuth 2.0 tokens (or the reference tokens)</p>
+<hr>
+<p>throttling per each operation of the API instead of applying for the entire API as a whole.</p>
+<hr>
+<p>web application firewall (WAF), which runs before the API gate-way and intercepts all the requests. Imperva, Akamai Technologies, Cloudflare, and AWS WAF are some popular WAF solution providers that also provide DoS and DDoS prevention.</p>
+<hr>
+<p>The modern term for monitoring and analytics is known as observability</p>
+<hr>
+<p>Prometheus is a popular open source monitoring tool for microservices</p>
+<hr>
+<p>Grafana is an open source data visualization tool. It can help you build dashboards to visualize the metrics being provided by Prometheus or any other data source</p>
+<hr>
+<p>Prometheus pulls metrics data from microservices on a periodic time interval. As you’ve learned, this is known as scraping</p>
+<hr>
+<p>Open Policy Agent (OPA)</p>
+<hr>
+<p>Access-control policies evolve as business requirements change—so every time we have to change our access-control policies, changing the microservice code is not a good practice.</p>
+<hr>
+<p>OPA server; these policies check whether a user/system that’s accessing a resource with an access token bears the scopes required for accessing that resource. We’ll use OPA policies to make autho-rization checks on the Order Processing microservice.</p>
+<hr>
+<p>Not all microservices use JSON over HTTP for service-to-service interactions, and gRPC is already a popular pick as an alternative</p>
+<hr>
+<p>Ideally, during the continuous integration/continuous delivery (CI/CD) pipeline, the keys should be generated and provisioned to the microservices.</p>
+<hr>
+<p>TLS first has to generate a public/private key pair, and then create a certificate-signing request (CSR) and submit the CSR for approval to the team that maintains the corporate CA. If everything looks good, the signed certificate is handed over to the developer who initiated the signing request. Then the developer deploys the certificate and the keys to the microservice. But this process is painful in a microservices deploy-ment with hundreds of services spinning up and down all the tim</p>
+<hr>
+<p>Lemur isn’t a CA, but it knows how to integrate with a CA and generate a signed cer-tificate. Microservices developers shouldn’t worry about the certificate-signing proces</p>
+<hr>
+<p>Certificate revocation can happen for two main reasons: the corresponding private key is compromised or the private key of the CA that signed the certificate is compromise</p>
+<hr>
+<p>Netflix microservices deployment, service-to-service communication is secured with mTLS using short-lived certificates</p>
+<hr>
+<p>a system identity or long-lived credentials residing in a Trusted Platform Module (TPM) or an Intel Software Guard Extensions (SGX) chip tightens security.</p>
+<hr>
+<p>Long-lived credentials are secured with a TPM or an SGX chip. Loading such long-lived credentials frequently is a costly operation. Short-lived credentials, on the other hand, are kept in memory.</p>
+<hr>
+<p>Netflix, for example, rotates keys every 4 minutes in its microservices deployment</p>
+<hr>
+<p>Netflix, for example, uses TPM or an SGX chip with tightened security to secure its long-lived credentials.</p>
+<hr>
+<p>three pillars of observ-ability: logging, metrics, and tracing.</p>
+<hr>
+<p>mTLS is the most popular way of securing interservice communications among microservices.</p>
+<hr>
+<p>OCSP stapling makes OCSP a little better. It takes the overhead of talking to the OCSP endpoint from the TLS client and hands it over to the server</p>
+<hr>
+<p>In practice, you use JWT along with mTLS, together, in most cases.</p>
+<hr>
+<p>JWT helps you achieve two things. First, it helps you pass the end-user context across microservices in a manner that can’t be forged. Because the claims set of the JWT is signed by the STS, no microservice can change its content without invalidat-ing its signature. Also, JWT helps you secure service-to-service communications. One microservice can access another microservice only if it carries a valid JWT issued by the trusted STS. Any recipient microservice rejects any request without a valid JWT.</p>
+<hr>
+<p>With mTLS alone, you can’t achieve nonrepudiation. But when you use a self-issued JWT, all the data added to it is bound to the owner of the corresponding private key that’s used to sign the message, and helps you achieve nonrepudiation</p>
+<hr>
+<p>The nested JWT carries the iden-tities of the end user and the calling microservice in a manner that can’t be forged!</p>
+<hr>
+<p>JWT addresses two main concerns in a microservices security design: secur-ing service-to-service communications and passing end-user context across microservices.</p>
+<hr>
+<p>When the identity of the microservice isn’t relevant, but the identity of the end user (system or human) is, you should prefer using JWT over mTLS. But still, in practice you will use JWT with mTLS together to build a second layer of defense.</p>
+<hr>
+<p>Having a different or new JWT for each interaction among microservices is a more secure approach than sharing the same JWT among all the microservices.</p>
+<hr>
+<p>A self-issued JWT is issued by a microservice itself and used for authentication among microservices.</p>
+<hr>
+<p>text-based protocol like JSON, you can use a binary protocol like Protocol Buffers (Protobuf)</p>
+<hr>
+<p>Unlike in HTTP, gRPC doesn’t have headers</p>
+<hr>
+<p>gRPC operates over HTTP/2, which is significantly more efficient than HTTP/ 1.1 because of request response multiplexing, binary encoding, and header compression.</p>
+<hr>
+<p>Unlike in HTTP/1.1, HTTP/2 supports bidirectional streaming, which is bene-ficial in microservice architectures.</p>
+<hr>
+<p>the recipient microservice is decoupled from the calling microservice</p>
+<hr>
+<p>The client application should securely store and use the client secret. For example, you should never store a client secret in cleartext; instead, encrypt it and store it in persistent storage (such as a database).</p>
+<hr>
+<p>the client application can use mTLS instead if stronger authentication is required</p>
+<hr>
+<p>As we discussed earlier in this chapter, because the value of the access token is passed in the URL, it will be in the browser history and also possibly logged into server logs.</p>
+<hr>
+<p>A typical difference between an MPA and a SPA is that in an MPA, each request for new content reloads the web page. But in a SPA, after the application has been loaded into the browser, no page reloads happen</p>
+<hr>
+<p>To limit the visibility of the filesystem to a running process, chroot is still popular today and is considered a best practice by system administrators.</p>
+<hr>
+<p>The main value Docker provides over traditional Linux containers is portability.</p>
+<hr>
+<p>Protocol Buffers are a flexible, efficient, and auto-mated mechanism for serializing structured data. You can think of it as JSON or XML but with the following exceptions:
+ Much smaller size for representing a given message  Much shorter time duration for processing a given message  Much simpler to understand, given its resemblance to programming languages</p>
+<hr>
+<p>HTTP/2 provides request multiplexing and header compression, which increase its performance significantly.</p>
+<hr>
+<p>over HTTP/1.x, if the client wants to make multiple requests to the server (in parallel) to improve performance, multiple TCP connections have to be used</p>
+<hr>
+<p>The API gateway works mostly with north/south traffic—the traffic between applications (or consumers) and APIs</p>
+<hr>
+<p>It deals with east/west traffic (the traffic among microservices) to take most of the burden off of the microservices, with respect to security processing and other nonfunctional requirements.</p>
+<hr>
+<p>approach we fol-lowed in chapter 6 and chapter 7 while securing inter-microservice communications with mTLS and JWT. You can even call this model an embedded service mesh (figure K.1) or an in-process service mesh.</p>
+<hr>
+<p>Service Mesh architecture consists primarily of two planes: a data plane and a control plane</p>
+<hr>
+<p>HTTP/2 provides request multiplexing and header compression that increases its performance significantly compared to HTTP/1.1</p>
+
+
+
+      </main>
+    </div>
+    
+    <script src="https://etienne.ninja/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+
+    
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+  integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+
+    
+  
+
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sécurité201 on Blogue d&#39;Étienne</title>
+    <link>https://etienne.ninja/tags/s%C3%A9curit%C3%A9201/</link>
+    <description>Recent content in Sécurité201 on Blogue d&#39;Étienne</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-ca</language>
+    <lastBuildDate>Sun, 07 Mar 2021 12:20:27 -0500</lastBuildDate>
+    
+	<atom:link href="https://etienne.ninja/tags/s%C3%A9curit%C3%A9201/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Advanced API Security OAuth 2.0 And Beyond</title>
+      <link>https://etienne.ninja/advanced-api-security-oauth-2.0-and-beyond/</link>
+      <pubDate>Sun, 07 Mar 2021 12:20:27 -0500</pubDate>
+      
+      <guid>https://etienne.ninja/advanced-api-security-oauth-2.0-and-beyond/</guid>
+      <description>Advanced API Security OAuth 2.0 And Beyond par Prabath Siriwardena 9/10
+-
+    
+Mes notes  JSON Web Encryption (JWE) and JSON Web Signature (JWS) are two increasingly popular standards for securing JSON messages.
+ REST (JSON over HTTP).
+ naked API is an unmanaged API. An unmanaged API has its own deficiencies
+ A comprehensive API management platform needs to have at least three main components: a publisher, a store, and a gateway (see Figure 1-9)</description>
+    </item>
+    
+    <item>
+      <title>Linux basics for hackers</title>
+      <link>https://etienne.ninja/linux-basics-for-hackers/</link>
+      <pubDate>Sun, 07 Mar 2021 12:20:27 -0500</pubDate>
+      
+      <guid>https://etienne.ninja/linux-basics-for-hackers/</guid>
+      <description>Linux basics for hackers 8/10
+-
+    
+Mes notes  locate uses a database that is usually only updated once a day, so if you just created a file a few minutes or a few hours ago, it might not appear in this list until the next day.
+ The ? wildcard is used to represent a single character, so a search for ?at would find hat, cat, and bat but not what, because at in this filename is preceded by two letters</description>
+    </item>
+    
+    <item>
+      <title>Microservices Security in Action</title>
+      <link>https://etienne.ninja/microservices-security-in-action/</link>
+      <pubDate>Sun, 07 Mar 2021 12:20:27 -0500</pubDate>
+      
+      <guid>https://etienne.ninja/microservices-security-in-action/</guid>
+      <description>Microservices Security in Action par Prabath Siriwardena 9/10
+-
+    
+Mes notes  Each microservice runs in its own container, and as a best practice, the container has to be an immutable server.3 In other words, after the container has spun up, it shouldn’t change any of the files in its filesystem or maintain any runtime state within the container itself.
+ You need a way to verify that the user context passed among microservices isn’t deliberately modified</description>
+    </item>
+    
+    <item>
+      <title>Official Google Cloud Certified Associate Cloud Engineer</title>
+      <link>https://etienne.ninja/official-google-cloud-certified-associate-cloud-engineer/</link>
+      <pubDate>Sun, 07 Mar 2021 12:20:27 -0500</pubDate>
+      
+      <guid>https://etienne.ninja/official-google-cloud-certified-associate-cloud-engineer/</guid>
+      <description>Official Google Cloud Certified Associate Cloud Engineer 9/10
+-
+    
+Mes notes  The fl ashcards in the TestBank will push the limits of what you should know for the cer-tif i cation exam
+ log sinks to export logs to external systems
+ Autoscalers can add or remove VMs from the cluster based on the workload. This is called autoscaling.
+ Managed clusters make use of containers.</description>
+    </item>
+    
+    <item>
+      <title>Practical Cloud Security A Guide for Secure Design and Deployment</title>
+      <link>https://etienne.ninja/practical-cloud-security-a-guide-for-secure-design-and-deployment/</link>
+      <pubDate>Sun, 07 Mar 2021 12:20:27 -0500</pubDate>
+      
+      <guid>https://etienne.ninja/practical-cloud-security-a-guide-for-secure-design-and-deployment/</guid>
+      <description>Practical Cloud Security A Guide for Secure Design and Deployment par Chris Dotson 7/10
+-
+    
+Mes notes  If you are in a very high security environment and your threat model includes protecting data in memory from a privileged user, you should seek out a platform that supports memory encryption; it goes by brand names such as Intel SGX, AMD SME, and IBM Z Pervasive Encryption.</description>
+    </item>
+    
+  </channel>
+</rss>

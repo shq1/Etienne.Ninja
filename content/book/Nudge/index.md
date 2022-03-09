@@ -1,0 +1,222 @@
+---
+title: "Nudge: Improving Decisions About Health, Wealth, and Happiness"
+tags: ["Argent"]
+date: 2022-03-07T12:20:27-05:00
+note: "8/10"
+image: cover.jpg
+auteur: Richard H. Thaler, Cass R. Sunstein
+---
+
+
+ 
+
+Simply by rearranging the cafeteria, Carolyn was able to increase or decrease the consumption of many food items by as much as 25 percent.
+
+*****
+
+school children, like adults, can be greatly influenced by small changes in the context
+
+*****
+
+There the authorities have etched the image of a black housefly into each urinal. It seems that men usually do not pay much attention to where they aim, which can create a bit of a mess, but if they see a target, attention and therefore accuracy are much increased
+
+*****
+
+A nudge, as we will use the term, is any aspect of the choice architecture that alters people’s behavior in a predictable way without forbidding any options or significantly changing their economic incentives. To count as a mere nudge, the intervention must be easy and cheap to avoid. Nudges are not mandates. Putting the fruit at eye level counts as a nudge. Banning junk food does not.
+
+*****
+
+That research has raised serious questions about the rationality of many judgments and decisions that people make.
+
+*****
+
+Suppose that a chess novice were to play against an experienced player. Predictably, the novice would lose precisely because he made inferior choices—choices that could easily be improved by some helpful hints. In many areas, ordinary consumers are novices, interacting in a world inhabited by experienced professionals trying to sell them things.
+
+*****
+
+It is true, of course, that some nudges are unintentional; employers may decide (say) whether to pay employees monthly or biweekly without intending to create any kind of nudge, but they might be surprised to discover that people save more if they get paid biweekly because twice a year they get three pay checks in one month
+
+*****
+
+Beethoven wrote his incredible ninth symphony while he was deaf, but we would not be at all surprised if we learned that he often misplaced his house keys. How can people be simultaneously so smart and so dumb?
+
+*****
+
+Voters, by the way, seem to rely primarily on their Automatic System.3 A candidate who makes a bad first impression, or who tries to win votes by complex arguments and statistical demonstrations, may well run into trouble
+
+*****
+
+This process is called “anchoring and adjustment.” You start with some anchor, the number you know, and adjust in the direction you think is appropriate. So far, so good. The bias occurs because the adjustments are typically insufficient. Experiments repeatedly show that, in problems similar to our example, people from Chicago are likely to make a high guess (based on their high anchor) while those from Green Bay guess low (based on their low anchor). As it happens, Milwaukee has about 580,000 people.4
+
+*****
+
+Anchors can even influence how you think your life is going. In one experiment, college students were asked two questions: (a) How happy are you? (b) How often are you dating? When the two questions were asked in this order the correlation between the two questions was quite low (.11). But when the question order was reversed, so that the dating question was asked first, the correlation jumped to .62. Apparently, when prompted by the dating question, the students use what might be called the “dating heuristic” to answer the question about how happy they are. “Gee, I can’t remember when I last had a date! I must be miserable.” Similar results can be obtained from married couples if the dating question is replaced by a lovemaking question.5
+
+*****
+
+In many domains, the evidence shows that, within reason, the more you ask for, the more you tend to get. Lawyers who sue cigarette companies often win astronomical amounts, in part because they have successfully induced juries to anchor on multimillion-dollar figures. Clever negotiators often get amazing deals for their clients by producing an opening offer that makes their adversary thrilled to pay half that very high amount.
+
+*****
+
+Thus vivid and easily imagined causes of death (for example, tornadoes) often receive inflated estimates of probability, and less-vivid causes (for example, asthma attacks) receive low estimates, even if they occur with a far greater frequency (here a factor of twenty).
+
+*****
+
+The “above average” effect is pervasive. Ninety percent of all drivers think they are above average behind the wheel, even if they don’t live in Lake Wobegon. And nearly everyone (including some who are rarely seen smiling) thinks he has an above-average sense of humor. (That is because they know what is funny!) This applies to professors, too. About 94 percent of professors at a large university were found to believe that they are better than the average professor, and there is every reason to think that such overconfidence applies to professors in general.9 (Yes, we admit to this particular failing.)
+
+*****
+
+About 50 percent of marriages end in divorce, and this is a statistic most people have heard. But around the time of the ceremony, almost all couples believe that there is approximately a zero percent chance that their marriage will end in divorce—even those who have already been divorced
+
+*****
+
+In one survey of people starting new businesses (typically small businesses, such as contracting firms, restaurants, and salons), respondents were asked two questions: (a) What do you think is the chance of success for a typical business like yours? (b) What is your chance of success? The most common answers to these questions were 50 percent and 90 percent, respectively, and many said 100 percent to the second question.11
+
+*****
+
+Suppose I ask you whether you want to make a bet. Heads you win $X, tails you lose $100. How much does X have to be for you to take the bet? For most people, the answer to this question is somewhere around $200. This implies that the prospect of winning $200 just offsets the prospect of losing $100.
+
+*****
+
+The mugs and the chocolate cost about the same, and in pretests students were as likely to choose one as the other. Yet when offered the opportunity to switch from a mug to a candy bar or vice versa, only one in ten switched.
+
+*****
+
+Marilyn thinks that she can go into a department store when they are having a big sale and just see whether they have something on sale that she really needs. She ends up with shoes that hurt (but were 70 percent off). Robert thinks he will engage only in safe sex, but then must make all the crucial decisions while aroused. Similar problems affect those who have problems with smoking, alcohol, a failure to exercise, excessive borrowing, and insufficient savings.
+
+*****
+
+The Planner is trying to promote your long-term welfare but must cope with the feelings, mischief, and strong will of the Doer, who is exposed to the temptations that come with arousal
+
+*****
+
+In the experiment, half of the moviegoers received a big bucket of popcorn and half received a medium-sized bucket. On average, recipients of the big bucket ate about 53 percent more popcorn—even though they didn’t really like it. After the movie, Wansink asked the recipients of the big bucket whether they might have eaten more because of the size of their bucket. Most denied the possibility, saying, “Things like that don’t trick me.” But they were wrong.
+
+*****
+
+In the first three rounds of this test, everything proceeds smoothly and easily. People make their matches aloud, in sequence, and everyone agrees with everyone else. But on the fourth round, something odd happens. The five other people in the group announce their matches before you—and every one makes an obvious error. It is now time for you to make your announcement. What will you do?
+
+*****
+
+Indeed, in a series of twelve questions, nearly three-quarters of people went along with the group at least once, defying the evidence of their own senses. Notice that in Asch’s experiment, people were responding to the decisions of strangers, whom they would probably never see again. They had no particular reason to want those strangers to like them.
+
+*****
+
+the success of songs was quite unpredictable, and the songs that did well or poorly in the control group, where people did not see other people’s judgments, could perform very differently in the “social influence worlds.” In those worlds, most songs could become popular or unpopular, with much depending on the choices of the first downloaders. The identical song could be a hit or a failure simply because other people, at the start, were seen to choose to have downloaded it or not.
+
+*****
+
+Their conclusion? The damage, such as it was, was probably “the result of normal driving conditions in which small objects strike the windshields of cars.” A later investigation, supporting the scientists’ conclusion, found that brand new cars lacked pits. The eventual judgment was that the pits “had been there all along, but no one had noticed them until now.” (You might have a look at your car right now; if you’ve had it for a while, there’s probably a pit, or two, or more.)
+
+*****
+
+Some signs, similar to those currently used in the park, stressed how bad the problem was: “Many past visitors have removed the petrified wood from the park, changing the natural state of the Petrified Forest.” Other signs emphasized an injunctive norm: “Please don’t remove the petrified wood from the park, in order to preserve the natural state of the Petrified Forest.” Cialdini’s theory predicted that the positive, injunctive norm would be more effective than the negative, informational one. This prediction was confirmed.
+
+*****
+
+One advertisement attempts to correct misperceived norms on college campuses by asserting, “Most (81 percent) of Montana college students have four or fewer alcoholic drinks each week.” Montana applies the same approach to cigarette smoking with an advertisement suggesting that “Most (70 percent) of Montana teens are tobacco free.” The strategy has produced big improvements in the accuracy of social perceptions and also statistically significant decreases in smoking
+
+*****
+
+If you want to nudge people into socially desirable behavior, do not, by any means, let them know that their current actions are better than the social norm.
+
+*****
+
+Do you intend to buy a new car in the next six months?23 The very question increased purchase rates by 35 percent.
+
+*****
+
+If people are asked how often they expect to floss their teeth in the next week, they floss more. If people are asked whether they intend to consume fatty foods in the next week, they consume less in the way of fatty foods.
+
+*****
+
+Smells matter too: mere exposure to the scent of an all-purpose cleaner makes people keep their environment cleaner while they eat.
+
+*****
+
+Outside of Hollywood, most of us choose a spouse, well, not more than two or three times. Few of us get to try many different careers. And outside of science fiction, we get one chance to save for retirement (though we can make some adjustments along the way). Generally, the higher the stakes, the less often we are able to practice.
+
+*****
+
+Long-term processes rarely provide good feedback. Someone can eat a high-fat diet for years without having any warning signs until the heart attack. When feedback does not work, we may benefit from a nudge.
+
+*****
+
+The example is obviously an extreme one, but many markets are not so different from this situation. Most of the time, competition ensures that price serves as a good signal of quality. Usually (but not always) the fifty-dollar bottles of wine are better than the twenty-dollar bottles. And irrational consumers will not alter the market as long as they do not predominate. So if some people choose wine by how much they like the label, they will not be harmed, but if many people start to do that, then wine with attractive labels will be overpriced.
+
+*****
+
+A key reason is that the Automatic System reads the word faster than the color naming system can decide the color of the text. See the word GREEN in red text and the nonthinking Automatic System rushes to press the left button, which is, of course, the wrong one
+
+*****
+
+Leaving the gas cap behind is a special kind of predictable error psychologists call a “postcompletion” error.2 The idea is that when you have finished your main task, you tend to forget things relating to previous steps. Other examples include leaving your ATM card in the machine after getting your cash
+
+*****
+
+forcing function,” meaning that in order to get what you want, you have to do something else first. So if in order to get your cash, you have to remove the card, you will not forget to do so.
+
+*****
+
+When we face a small number of well-understood alternatives, we tend to examine all the attributes of all the alternatives and then make trade-offs when necessary. But when the choice set gets large, we must use alternative strategies, and these can get us into trouble.
+
+*****
+
+The opportunity cost of the ten thousand dollars is likely to be neglected. (In other words, once they purchase the car, they tend to forget about the ten thousand dollars and stop treating it as money that could have been spent on something else.) In contrast, every time the family uses a taxi the cost will be in their face, with the meter clicking every few blocks. So a behavioral analysis of the incentives of car ownership will predict that people will underweight the opportunity costs of car ownership, and possibly other less salient aspects such as depreciation, and may overweight the very salient costs of using a taxi.
+
+*****
+
+Some older American workers are also turning down “free money.” To have this free money option, a worker must meet three qualifications: he needs to be more than 59½ years old, so that he faces no tax penalty when he withdraws funds from his retirement account; his firm has to offer a matching contribution (meaning that the firm contributes something if the employee does); and his employer has to allow employees to withdraw funds from their retirement accounts while still working. For such employees, joining the plan is a sure profit opportunity because they can join, then immediately withdraw their contributions without any penalty, yet keep the employer match. Nonetheless, a study finds that up to 40 percent of eligible workers either do not join the plan at all or do not save enough to get the full match.5
+
+*****
+
+But when automatic enrollment was adopted, enrollment of new employees jumped to 90 percent immediately and increased to more than 98 percent within thirty-six months. Automatic enrollment thus has two effects: participants join sooner, and more participants join eventually.
+
+*****
+
+One survey found that 58 percent spent less than one hour determining both their contribution rate and investment decisions.11 Most people spend more time than that picking a new tennis racket or television set. Apparently, many people are using some simple shortcuts
+
+*****
+
+Save More Tomorrow is a choice-architecture system that was constructed with close reference to five psychological principles that underlie human behavior:
+Many participants say that they think they should be saving more, and plan to save more, but never follow through.
+Self-control restrictions are easier to adopt if they take place some time in the future. (Many of us are planning to start diets soon, but not today.)
+Loss aversion: people hate to see their paychecks go down.
+Money illusion: losses are felt in nominal dollars (that is, not adjusted for inflation, so a dollar in 1995 is seen as worth the same as a dollar in 2005).
+Inertia plays a powerful role.
+
+*****
+
+riskier investments such as stocks (also called equities)
+
+*****
+
+Humans are loss averse. Roughly speaking, they hate losses about twice as much as they like gains.
+
+*****
+
+Being Human, when Vince loses five thousand dollars in a day he is miserable— about as miserable as he is happy at the end of a day when he gains ten thousand dollars. How does Vince feel about investing in stocks? Very nervous! On a daily basis, stocks go down almost as often as they go up, so if you are feeling the pain of losses much more acutely than the pleasure of gains, you will hate investing in stocks.
+
+*****
+
+In 1992 new participants were allocating 58 percent of their assets to equities, and by 2000 that percentage had risen to 74. In the next two years, however, the allocation to equities for new participants fell back to 54 percent. Their market timing was backward. They were heavily buying stocks when stock prices were high, and then selling stocks when their prices were low.
+
+*****
+
+Most of the participants chose to invest their money half and half, achieving an asset allocation of 50 percent stocks. Another group was told that one fund invested entirely in stocks and the other “balanced” fund invested half in stocks and half in bonds. People in this group could have also have invested 50 percent of their money in stocks by putting all their money in the balanced fund. Instead, they followed the 1/n rule and divided their money evenly between the two funds—ending up with mostly stocks.
+
+*****
+
+Benartzi and Thaler (2001) examined behavior in retirement saving plans of 170 companies. They found that the more stock funds the plan offered, the greater was the percentage of participants’ money invested in stocks.
+
+*****
+
+For example, few participants put all of their money into one of these funds, even though that is the mission for which they were designed.
+
+*****
+
+five million Americans have more than 60 percent of their retirement savings in company stock.8 This concentration is risky on two counts. First, a single security is much riskier than the portfolios offered by mutual funds. Second, as employees of Enron and WorldCom discovered the hard way, workers risk losing both their jobs and the bulk of their retirement savings all at once.
+
+*****
+
+According to estimates by the economist Lisa Meulbroek (2002), a dollar in company stock is worth less than half the value of a dollar in a mutual fund! In other words, when firms foist company stock onto their employees, it is like paying them fifty cents on the dollar. The upshot is that, in general, workers would be much better off with a diversified mutual fund than with company stock.
