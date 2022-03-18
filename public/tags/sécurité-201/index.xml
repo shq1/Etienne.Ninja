@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sécurité 201 on Blogue d&#39;Étienne</title>
-    <link>https://main.d180cq1p10na41.amplifyapp.com/tags/s%C3%A9curit%C3%A9-201/</link>
+    <link>https://www.etienne.ninja/tags/s%C3%A9curit%C3%A9-201/</link>
     <description>Recent content in Sécurité 201 on Blogue d&#39;Étienne</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-ca</language>
-    <lastBuildDate>Mon, 07 Mar 2022 12:20:27 -0500</lastBuildDate><atom:link href="https://main.d180cq1p10na41.amplifyapp.com/tags/s%C3%A9curit%C3%A9-201/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Mar 2022 12:20:27 -0500</lastBuildDate><atom:link href="https://www.etienne.ninja/tags/s%C3%A9curit%C3%A9-201/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mastering Azure Security</title>
-      <link>https://main.d180cq1p10na41.amplifyapp.com/mastering-azure-security/</link>
+      <link>https://www.etienne.ninja/mastering-azure-security/</link>
       <pubDate>Mon, 07 Mar 2022 12:20:27 -0500</pubDate>
       
-      <guid>https://main.d180cq1p10na41.amplifyapp.com/mastering-azure-security/</guid>
+      <guid>https://www.etienne.ninja/mastering-azure-security/</guid>
       <description>two different network architectures in Azure datacenters – Default LAN Architecture (DLA) and Quantum 10 Architecture (Q10)
  Each cluster contains around 1,000 VMs. All VMs are managed by the FabricController (FC).
  Establishment of policies, and continuous monitoring of their proper implementation, by the members of the governing body of an organization.
@@ -21,19 +21,19 @@
     
     <item>
       <title>La sécurité des API</title>
-      <link>https://main.d180cq1p10na41.amplifyapp.com/securityapi/</link>
+      <link>https://www.etienne.ninja/securityapi/</link>
       <pubDate>Sat, 24 Apr 2021 12:20:27 -0500</pubDate>
       
-      <guid>https://main.d180cq1p10na41.amplifyapp.com/securityapi/</guid>
+      <guid>https://www.etienne.ninja/securityapi/</guid>
       <description>Introduction Avant de vous lancer dans la lecture, assurez-vous de bien comprendre certains principes de sécurité pour suivre. Ce n’est pas un article accessible aux nouveaux en sécurité. Par exemple, vous devez connaitre: la différence entre le mTLS et TLS, un JWT, clé privé/public, header d’un packet. Le livre est une combinaison de théorie et de pratique. Je n’expliquerai pas les étapes de développement et de déploiement d’un API avec un framework comme l’explique le livre.</description>
     </item>
     
     <item>
       <title>Advanced API Security OAuth 2.0 And Beyond</title>
-      <link>https://main.d180cq1p10na41.amplifyapp.com/advanced-api-security-oauth-2.0-and-beyond/</link>
+      <link>https://www.etienne.ninja/advanced-api-security-oauth-2.0-and-beyond/</link>
       <pubDate>Mon, 08 Mar 2021 12:20:27 -0500</pubDate>
       
-      <guid>https://main.d180cq1p10na41.amplifyapp.com/advanced-api-security-oauth-2.0-and-beyond/</guid>
+      <guid>https://www.etienne.ninja/advanced-api-security-oauth-2.0-and-beyond/</guid>
       <description>JSON Web Encryption (JWE) and JSON Web Signature (JWS) are two increasingly popular standards for securing JSON messages.
  REST (JSON over HTTP).
  naked API is an unmanaged API. An unmanaged API has its own deficiencies
@@ -43,20 +43,20 @@
     
     <item>
       <title>Linux basics for hackers</title>
-      <link>https://main.d180cq1p10na41.amplifyapp.com/linux-basics-for-hackers/</link>
+      <link>https://www.etienne.ninja/linux-basics-for-hackers/</link>
       <pubDate>Sun, 07 Mar 2021 12:20:27 -0500</pubDate>
       
-      <guid>https://main.d180cq1p10na41.amplifyapp.com/linux-basics-for-hackers/</guid>
+      <guid>https://www.etienne.ninja/linux-basics-for-hackers/</guid>
       <description>locate uses a database that is usually only updated once a day, so if you just created a file a few minutes or a few hours ago, it might not appear in this list until the next day.
  The ? wildcard is used to represent a single character, so a search for ?at would find hat, cat, and bat but not what, because at in this filename is preceded by two letters</description>
     </item>
     
     <item>
       <title>Microservices Security in Action</title>
-      <link>https://main.d180cq1p10na41.amplifyapp.com/microservices-security-in-action/</link>
+      <link>https://www.etienne.ninja/microservices-security-in-action/</link>
       <pubDate>Sun, 07 Mar 2021 12:20:27 -0500</pubDate>
       
-      <guid>https://main.d180cq1p10na41.amplifyapp.com/microservices-security-in-action/</guid>
+      <guid>https://www.etienne.ninja/microservices-security-in-action/</guid>
       <description>Each microservice runs in its own container, and as a best practice, the container has to be an immutable server.3 In other words, after the container has spun up, it shouldn’t change any of the files in its filesystem or maintain any runtime state within the container itself.
  You need a way to verify that the user context passed among microservices isn’t deliberately modified
  This architecture, which enables the various components in a system to pick the technology stack that is best for them, is known as a polyglot architecture.</description>
@@ -64,10 +64,10 @@
     
     <item>
       <title>Official Google Cloud Certified Associate Cloud Engineer</title>
-      <link>https://main.d180cq1p10na41.amplifyapp.com/official-google-cloud-certified-associate-cloud-engineer/</link>
+      <link>https://www.etienne.ninja/official-google-cloud-certified-associate-cloud-engineer/</link>
       <pubDate>Sun, 07 Mar 2021 12:20:27 -0500</pubDate>
       
-      <guid>https://main.d180cq1p10na41.amplifyapp.com/official-google-cloud-certified-associate-cloud-engineer/</guid>
+      <guid>https://www.etienne.ninja/official-google-cloud-certified-associate-cloud-engineer/</guid>
       <description>The fl ashcards in the TestBank will push the limits of what you should know for the cer-tif i cation exam
  log sinks to export logs to external systems
  Autoscalers can add or remove VMs from the cluster based on the workload. This is called autoscaling.
@@ -76,10 +76,10 @@
     
     <item>
       <title>Practical Cloud Security A Guide for Secure Design and Deployment</title>
-      <link>https://main.d180cq1p10na41.amplifyapp.com/practical-cloud-security-a-guide-for-secure-design-and-deployment/</link>
+      <link>https://www.etienne.ninja/practical-cloud-security-a-guide-for-secure-design-and-deployment/</link>
       <pubDate>Sun, 07 Mar 2021 12:20:27 -0500</pubDate>
       
-      <guid>https://main.d180cq1p10na41.amplifyapp.com/practical-cloud-security-a-guide-for-secure-design-and-deployment/</guid>
+      <guid>https://www.etienne.ninja/practical-cloud-security-a-guide-for-secure-design-and-deployment/</guid>
       <description>If you are in a very high security environment and your threat model includes protecting data in memory from a privileged user, you should seek out a platform that supports memory encryption; it goes by brand names such as Intel SGX, AMD SME, and IBM Z Pervasive Encryption.
  You must track who has access to the private keys, because these individuals have the ability to impersonate your site.</description>
     </item>

@@ -1,11 +1,12 @@
-baseURL: https://main.d180cq1p10na41.amplifyapp.com/
+baseURL: https://www.etienne.ninja
 
 languageCode: fr-ca
 title: Blogue d'Étienne
 theme: vanilla-bootstrap-hugo-theme
 #googleAnalytics: UA-123456789-1
-relativeURLs: true
-canonifyURLs: true
+#relativeURLs: true #Default False
+#canonifyURLs: false #Default False
+
 enableEmoji: true
 taxonomies:
   tag: tags
