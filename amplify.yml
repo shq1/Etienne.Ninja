@@ -4,7 +4,6 @@ frontend:
     # IMPORTANT - Please verify your build commands
     build:
       commands: 
-       - git submodule update --init --recursive --depth 1
         - hugo
   artifacts:
     # IMPORTANT - Please verify your build output directory
