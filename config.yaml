@@ -5,7 +5,7 @@ title: Blogue d'Étienne
 theme: vanilla-bootstrap-hugo-theme
 #googleAnalytics: UA-123456789-1
 #relativeURLs: false
-#canonifyURLs: true
+#canonifyURLs: false
 enableEmoji: true
 taxonomies:
   tag: tags
