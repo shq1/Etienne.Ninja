@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Articles on Blogue d&#39;Étienne</title>
-    <link>https://etienne.ninja/post/</link>
+    <link>https://www.etienne.ninja/post/</link>
     <description>Recent content in Articles on Blogue d&#39;Étienne</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-ca</language>
-    <lastBuildDate>Sun, 07 Mar 2021 12:04:44 -0500</lastBuildDate><atom:link href="https://etienne.ninja/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Mar 2021 12:04:44 -0500</lastBuildDate><atom:link href="https://www.etienne.ninja/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>La sécurité des API</title>
-      <link>https://etienne.ninja/securityapi/</link>
+      <link>https://www.etienne.ninja/securityapi/</link>
       <pubDate>Sat, 24 Apr 2021 12:20:27 -0500</pubDate>
       
-      <guid>https://etienne.ninja/securityapi/</guid>
+      <guid>https://www.etienne.ninja/securityapi/</guid>
       <description>Introduction Avant de vous lancer dans la lecture, assurez-vous de bien comprendre certains principes de sécurité pour suivre. Ce n’est pas un article accessible aux nouveaux en sécurité. Par exemple, vous devez connaitre: la différence entre le mTLS et TLS, un JWT, clé privé/public, header d’un packet. Le livre est une combinaison de théorie et de pratique. Je n’expliquerai pas les étapes de développement et de déploiement d’un API avec un framework comme l’explique le livre.</description>
     </item>
     
     <item>
       <title>Les micros habitudes</title>
-      <link>https://etienne.ninja/les-micros-habitudes/</link>
+      <link>https://www.etienne.ninja/les-micros-habitudes/</link>
       <pubDate>Sun, 07 Mar 2021 12:20:27 -0500</pubDate>
       
-      <guid>https://etienne.ninja/les-micros-habitudes/</guid>
+      <guid>https://www.etienne.ninja/les-micros-habitudes/</guid>
       <description>Le livre Atomic habits est l&amp;rsquo;un des livres qui m&amp;rsquo;a le plus transformé.
 Le livre commence par expliquer que les petites différences sont importante sur le long terme. Personne ne remarque si tu t&amp;rsquo;améliores d&amp;rsquo;un pourcent, mais les petits changements qui sont répété devienne significative sur plusieurs années. Par exemple:
  Si tu mets un peu d&amp;rsquo;argent de côté chaque semaine, tu ne deviens pas immédiatement financièrement indépendant. Tu n&amp;rsquo;es pas en forme après deux scéances de gym.</description>
@@ -29,10 +29,10 @@ Le livre commence par expliquer que les petites différences sont importante sur
     
     <item>
       <title>Protection de son identité numérique</title>
-      <link>https://etienne.ninja/protection-de-sa-vie-num%C3%A9rique/</link>
+      <link>https://www.etienne.ninja/protection-de-sa-vie-num%C3%A9rique/</link>
       <pubDate>Sun, 07 Mar 2021 12:16:03 -0500</pubDate>
       
-      <guid>https://etienne.ninja/protection-de-sa-vie-num%C3%A9rique/</guid>
+      <guid>https://www.etienne.ninja/protection-de-sa-vie-num%C3%A9rique/</guid>
       <description>Peut-être que vous aimeriez mieux protégez votre vie privée, mais vous ne savez pas par où commencer? Commencez par lire cette page. Nous avons tous une vie sur internet et pourtant la sécurité de cette identité est souvent négligée.
 Je vous suggère deux étapes importantes pour corriger cette négligence.
  Étape 1 - Voute de mot de passe Si vous n&amp;rsquo;utilisez pas de voûte, vous utilisez probablement un &amp;ldquo;pattern&amp;rdquo; douteux facile à deviner pour la création de vos mots de passe.</description>
