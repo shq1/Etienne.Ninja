@@ -1,5 +1,5 @@
 ---
-title: "La sécurité des API"
+title: "(DRAFT) La sécurité des API"
 tags: ["Sécurité 201"]
 date: 2021-04-24T12:20:27-05:00
 ---
@@ -37,7 +37,7 @@ Le livre introduit ensuite des concepts fondamentaux à la sécurité que je vai
 3. Non-répudiation
     * Généralement assuré par la signature du message avec la clé privé du propriétaire. 
 4. Confidentialité
-    * Encore le TLS ;) Si vous ne savez pas pourquoi, je ne vous suggère pas de lire la suite. 
+    * Encore le TLS ;) 
     * Il amène un rappelle important concernant les proxy qui supportent deux modes: TLS Bridging et TLS tunneling. Les bridging termine les connections TLS et en débute une autre. La donnée passe donc en clair sur le proxy, vous ne devez donc pas lui faire confiance si vous ne le contrôlez pas. 
 5. Disponibilité
     * Le système doit rester disponible, peut importe ce qui arrive! Enfin, presque. Contrairement à un monolithic, le système ne tombe pas si un bug touche un seul des microservices. 
@@ -88,9 +88,9 @@ La solution est donc d'envoyer _deux_ jetons après l'authentification: un acces
 Bien que l'access token est souvent en forme JWT, ils peuvent être opaque aussi. C'est souvent le cas lorsque le Gateway agit comme STS. 
 
 # La délégation
-Un sujet important qu'amène la sécurité aujourd'hui est le principe de délégation des accès. Vous avez surement déjà vu les fameux "Connectez-vous avec Google ou Facebook". avec les consentements . C'est le protocol OAUTH 2.0 en arrière. L’utilisateur délègue ses accès à L’application. L’application récupère un access token à l’authorization Server et fait ensuite une action au microservice.
+Un sujet important qu'amène la sécurité aujourd'hui est le principe de délégation des accès. Vous avez surement déjà vu les fameux "Connectez-vous avec Google ou Facebook". avec les consentements . C'est le protocole OAUTH 2.0 en arrière. L’utilisateur délègue ses accès à l’application. L’application récupère un access token à l’authorization Server et fait ensuite une action au microservice.
 Chapitre 3: Securing North/south traffic with an API Gateway “In an ideal world, the microservice developer should worry only about the business functionnality of a microservice, and the rest should be handled by specialized components with less hassle. The API Gateway and service Mesh are two architectural patterns that help us reach that ideal.” Page 58.
-Un aspect clé des bonnes pratiques des microservices est le principe de responsabilité unique. Chaque microservice devrait exécuter une seule fonction. Sans paterns d’architecture, un microservice se trouve responsable : D’extraire le jeton de l’entête, communiquer avec le STS pour valider le jeton, gérer la réponse du STS et si c’est positif, exécuter la tâche business que le microservice est sensé faire. La combinaison de la sécurité et la tâche business introduis une complexité et une couche de gestion suplémentaire au microservice. Sans oublier que l’augmentation du nombre de microservice augmente aussi le nombre de requête au STS. L’utilisation d’un API Gateway permet d’avoir un meilleur découplage de la sécurité et le microservice.
+Un aspect clé des bonnes pratiques des microservices est le principe de responsabilité unique. Chaque microservice devrait exécuter une seule fonction. Sans paterns d’architecture, un microservice se trouve responsable : D’extraire le jeton de l’entête, communiquer avec le STS pour valider le jeton, gérer la réponse du STS et si c’est positif, exécuter la tâche business que le microservice est sensé faire. La combinaison de la sécurité et la tâche business introduis une complexité et une couche de gestion supplémentaire au microservice. Sans oublier que l’augmentation du nombre de microservices augmente aussi le nombre de requêtes au STS. L’utilisation d’un API Gateway permet d’avoir un meilleur découplage de la sécurité et le microservice.
 
 
 # 1. Sécurité à la frontière
@@ -105,7 +105,7 @@ Les API ([Application Programming Interface](https://en.wikipedia.org/wiki/API))
 
 ## 1.1 Pourquoi ne pas utiliser du Basic Authentification ? (3.2.3)
 Le basic auth est simplement une combinaison d’un nom d’utilisateur et d’un mot de passe envoyé à l’API dans le header de la requête. Cette solution ne permet pas de déléguer des accès à une application tierce. Reprenons l’exemple de sitecomique123.com, si vous voulez vous authentifier avec Facebook, vous leurs donnerez alors votre username et password de Facebook. L’application pourait allors faire ce qu’il veut avec votre compte! De plus, le basic auth utilise un mot de passe static avec une durée de vie indéterminer. Alors l’application sitecomique123.com gardera indéfiniement votre mot de passe. Et une règle général en sécurité: Le plus longtemps l’information est sauvegardé à un endroit, plus les chances de compromission sont élevé.
-Parler aussi des enjeux de sécurité. dans le header
+Nous pouvons aussi avoir des enjeux de sécurité d'avoir un username/password dans le header: 
 
 
 ## 1.2 Et pourquoi ne pas utiliser mTLS?
