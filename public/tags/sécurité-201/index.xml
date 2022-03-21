@@ -42,6 +42,16 @@
     </item>
     
     <item>
+      <title>Learn Kubernetes Security</title>
+      <link>https://www.etienne.ninja/learn-kubernetes-security/</link>
+      <pubDate>Sun, 07 Mar 2021 12:20:27 -0500</pubDate>
+      
+      <guid>https://www.etienne.ninja/learn-kubernetes-security/</guid>
+      <description>Comme j&amp;rsquo;ai lu le livre devant mon ordinateur et non sur mon téléphone, mes notes sont différente que des Highlights.
+Kube réponds aux scaling, cout et les délais des cycle de déploiement. L&amp;rsquo;explosion des microservice amene une complexité aux devOps. différents language et interpreteur. différents packages, différentes config. C&amp;rsquo;est la que docker règle bien des problèmes. Docker Swarm est renommé Docker Enterprise Edition. Comme Conteneur orchestration Kubernetes represente 77% du marché.</description>
+    </item>
+    
+    <item>
       <title>Linux basics for hackers</title>
       <link>https://www.etienne.ninja/linux-basics-for-hackers/</link>
       <pubDate>Sun, 07 Mar 2021 12:20:27 -0500</pubDate>

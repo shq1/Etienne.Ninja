@@ -1,0 +1,670 @@
+<!doctype html>
+
+<html lang="en" class="h-100">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="generator" content="Hugo 0.80.0" />
+  <link rel="stylesheet" href="https://www.etienne.ninja/css/bootstrap.min.css">
+  
+  
+  <title>Learn Kubernetes Security | Blogue d&#39;Étienne</title>
+  <style>
+.container {
+  max-width: 800px;
+}
+#nav a {
+  font-weight: bold;
+  color: inherit;
+}
+#nav a.nav-link-active {
+  background-color: #212529;
+  color: #fff;
+}
+#nav-border {
+  border-bottom: 1px solid #212529;
+}
+#main {
+  margin-top: 1em;
+  margin-bottom: 4em;
+}
+#home-jumbotron {
+  background-color: inherit;
+}
+#footer .container {
+  padding: 1em 0;
+}
+#footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+.font-125 {
+  font-size: 125%;
+}
+.tag-btn {
+  margin-bottom: 0.3em;
+}
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  background-color: transparent;
+  border-radius: 0;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+img,
+iframe,
+embed,
+video,
+audio {
+  max-width: 100%;
+}
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  width: initial;
+}
+</style>
+</head>
+  <body class="d-flex flex-column h-100">
+    <div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+  
+  
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/"><i data-feather="home"></i> Accueil</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/post/"><i data-feather="edit"></i> Articles</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/book/"><i data-feather="book"></i> Livres</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/tags/"><i data-feather="tag"></i> Mots clés</a>
+  
+    
+    
+      
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/about/"><i data-feather="smile"></i> À propos</a>
+  
+  </nav>
+</div>
+
+    <div class="container">
+      <main id="main">
+        
+
+
+
+<br />
+
+
+<div class="card mb-3 border-0">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="cover.jpg" class="card-img">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title">Learn Kubernetes Security</h2>
+        <p class="card-text ">Auteur: Kaizhe Huang and Pranjal Jumde</p> 
+        <p class="card-text ">Ma note: 9/10</p> 
+        <p class="card-text">
+
+<i data-feather="calendar"></i> <time datetime="2021-03-07">Mar 7, 2021</time>
+
+
+  <br>
+  <i data-feather="tag"></i>
+  
+  
+  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://www.etienne.ninja/tags/s%C3%A9curit%C3%A9-201">Sécurité 201</a>
+  
+</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<h2>Mes highlights</h2> 
+<br>
+
+
+<p>Comme j&rsquo;ai lu le livre devant mon ordinateur et non sur mon téléphone, mes notes sont différente que des <strong>Highlights</strong>.</p>
+<p>Kube réponds aux scaling, cout et les délais des cycle de déploiement. L&rsquo;explosion des microservice amene une complexité aux devOps. différents language et interpreteur. différents packages, différentes config. C&rsquo;est la que docker règle bien des problèmes. Docker Swarm est renommé Docker Enterprise Edition. Comme Conteneur orchestration Kubernetes represente 77% du marché. Par rapport a OpenShift (9%), Swarm (5%), Mesos (4%).</p>
+<p>Il y a deux types de nodes: Master et worker nodes. Le control plane (Kube-APIserver) roule sur le master nodes. Les worker sont des Kubelet.</p>
+<p><img src="MasterAndWorknode.png" alt="MasterAndWorknode"></p>
+<ol>
+<li>kube-apiserver: Controlplane. valide et vconfigure pour les objets. un object est comme un pod, un service ou un controle.</li>
+<li>etcd: héberge les donnée comme les config, état et metadonnée. Il  surveille aussi pour les nouveaux updates et config a faire.</li>
+<li>kube-scheduler: surveille pour creer des nouveaux pods et assiger les pods aux nodes. Crée une liste de nodes ou les pods peuvent rouler. Quels nodes ont quoi comme ressources et policies. Scheduler rank les nodes pour trouver le meilleurs node pour le pod.</li>
+<li>Kube Controller</li>
+</ol>
+<p>The YAML spec for a deployment consist of replicas.</p>
+<p>Namespace is a virtual cluster.</p>
+<p>Pods intéragis avec Kube-apiServer utilise un compte de service pour s&rsquo;identifier. On a trois compte de service par défaut: kube-proxy, kube-dns, node-controller.</p>
+<p>Network policies défini comment les pods peuvent communiquer entre eux. Par défaut c&rsquo;est any any.</p>
+<p>pod security policy c&rsquo;est auniveau du cluster qui défini les conditions pour que le pod puisse rouler.</p>
+<p><br><br>
+Minikube est parfait pour débuter avec kubernetes.</p>
+<p>k3s est un lighware de kubernetes. Moins de 40mb, idéal for edge, IOT, ARM. Au lieu d&rsquo;avoir etcd, utilise sqlite.</p>
+<p>Par défault, kube is + ouvert et moins sécure que openshift.</p>
+<p>Openshift est un produit offert par RedHat.</p>
+<p>Kubedex (<a href="https://kubedex.com/google-gke-vs-microsoft-aks-vs-amazon-eks/">https://kubedex.com/google-gke-vs-microsoft-aks-vs-amazon-eks/</a>) compare les  kubernetes services. GKE supporte Istio, sandbox, ingress managed ssl, mais AKS et EKS ne le supporte pas.</p>
+<p>KOPS, kubernetes operation, aide a gérer kube. Controle quel os image on veut et setup mes ssh admin key pour les masters notes et workers nodes.</p>
+<p>Bruce Schneier summed this up best in 1999 when he said <strong>Complexity is the
+worst enemy of security</strong>
+<br><br></p>
+<h1 id="chapitre-2---kube-networking">Chapitre 2 - Kube networking</h1>
+<p>Chaque pod a sa propre ip address.</p>
+<p>Pod dans un node communique sans NAT. Agent comme kubelet communique entre pod sur le même node.</p>
+<p>Linux namespace est pour partitionner les ressources et l&rsquo;isolations.</p>
+<p>Namespace est fondamental pour les container. Pour linux 4,7, 7 types existes:</p>
+<ol>
+<li>cgroup, IPC, network, Mount, PID, User et UTS</li>
+</ol>
+<p>If we have multiple container in the same pod, communicate with IPC Object of POSIX message queue. Can share mounted volume (temporary memory, filesystem or cloud storage). We can aloso have a common PID namespace with shareProcessNamespace option in the podSpec. Avec ça, Application A et B, dans les conteneurs A et B peuvent communiquer ensemble avec SIGTERM et SIGKILL. Donc Processes are visible to other containers in the pod. This includes all information visible in /proc, such as passwords that were passed as arguments or environment variables. These are protected only by regular Unix permissions.</p>
+<p>Le kubernetes service donne une une couche d&rsquo;abstraction de comment acceder aux pods en utilisant des label au lieu d&rsquo;IP. Kube-Proxy gère les flux de communication tout en communicant avec controlplane pour savoir si les services, ip ont changé.</p>
+<p>un service peut avoir 4 différents types:</p>
+<ul>
+<li>ClusterIP (défault) seullement accessible dans le même cluster. On utilise kubectl proxy, mais préférable pour proxy.</li>
+<li>NodePort, static port on every node.</li>
+<li>Load balancer, A node balancer per service is usually an expensive options.</li>
+<li>External Name (CNAME)</li>
+</ul>
+<p>CNI = Container Network interface. CNI is a Cloud Narive Computing Foundation (CNCF).</p>
+<p><img src="CNI.png" alt="CNI"></p>
+<p>Calico is a open source projet that enables cloud native application connectiivty and policy (CNI plugin). Il peut s&rsquo;intégrer avec Kubernetes, Apache Mesos, Docker, openStack.</p>
+<p>Calico offre des meilleurs performances que les autres. Et offre une comprehension plus simple vs Kubernetes Built-in network policy. Kubernetes network policy peut seulement utilise le whitelist. Calico amenede des deny rules.</p>
+<p>a DeamonSet Service run in every node. Responsible for programming and routing kernel route</p>
+<p>Il y a presque toujours un load balancer devant un cluster kubernetes. Un serice peut être exposé par un load balancer (Service A de la prochaine image). ou un NodePort (service B port 30000). Ingress n&rsquo;est pas un service type c&rsquo;est efficace et économique vs a loadBalancer.</p>
+<p><img src="Communication.png" alt="Communication"></p>
+<h1 id="chapitre-3---threat-modeling">Chapitre 3 - Threat modeling</h1>
+<p>Il faut identifier:</p>
+<ul>
+<li>intéractions.</li>
+<li>Acteurs de L&rsquo;environnement</li>
+<li>Les composantes et objects
+Après un bon threat model, il faut avoir défini : Actif, les contrôles, les acteurs, la surface d&rsquo;attaque, les menaces, les mitigations.</li>
+</ul>
+<p>Dans l&rsquo;industrie nous avons différentes approche:</p>
+<ul>
+<li>STRIDE - What can go wrong?</li>
+<li>PASTA - Process Attack simulation and threat Analysis. attacker approach</li>
+<li>VAST - Visual Agile and simple threat Modeling - Should be more integrated with agile software development.</li>
+</ul>
+<p><img src="Interaction.png" alt="Interaction"></p>
+<ul>
+<li>Kube-APIserver- the control plane that validates and configures data for objects.</li>
+<li>etcd high-availability key-value store data like config, state and metadata.</li>
+<li>Kube-scheduler, watches for created pods and assigns the pods to nodes.</li>
+<li>Kube-controller-manager: State update and make changes to the cluster</li>
+<li>Cloud-controller-manager: interact with cloud privides</li>
+<li>Kubelet: Registrer de node with API server, ensure that the pods and containers are healthy.</li>
+</ul>
+<p>Les threat actors sur Kubernetes peuvent être catégoriser par:</p>
+<ul>
+<li>End user. With the entry point (load balancer or ingress). Sometime pods or container is directly exposed on the internet.</li>
+<li>Internal Attacker: Malicious containers or pods spawned within the cluster</li>
+<li>Priviledged attacker: Admin, infra admin compromises kube-apiserver instances.</li>
+</ul>
+<p><img src="ThreatActor.png" alt="ThreatActor"></p>
+<p>Il y a une bonne liste de threats qui vient avec la config par défaut de Kubernetes. Chapitre 3, page 126.</p>
+<p><img src="ThreatModel.png" alt="ThreatModel">
+<img src="Table1.png" alt="Table1">
+<img src="Table2.png" alt="Table2"></p>
+<h1 id="chapitre-4---least-privilege">Chapitre 4 - Least Privilege</h1>
+<p>Users in system:master group have the cluster-admin role.</p>
+<p>RBAC element:</p>
+<ul>
+<li>
+<p>Subject. Three type:</p>
+<ul>
+<li>Regular users, created with LDAP, AD or private Key.</li>
+<li>Service Acocunt: Pods authenticate to the Kube-APIServer. Restricted to the namespaces and credentials stored as secrets.</li>
+<li>Anonymous user</li>
+</ul>
+</li>
+<li>
+<p>ressource</p>
+</li>
+<li>
+<p>verb</p>
+</li>
+</ul>
+<p>In kubernetes, there are no deny permission. Un rôle est restreint au namespace. Mais un clusterrole travaille au niveau du cluster.</p>
+<p>Kubernetes namespace est un regroupement logique pour des ressources liés. Évite les collision de nom. Sur linux, isole les ressources systèmes.</p>
+<p>Kubernetes namespace permet a différentes applications, teams, user de travailler sur le même cluster. trois Namespace sont crée par défaut: Default (pour les ressources), kube-system (pour kube-apiserver, scheduler, manager) et kube-public (accessible a tous, mais rien n&rsquo;est créer par défaut dans ce namespace.</p>
+<p>Pour appliquer le least priv, on devrait se poser ces questions:</p>
+<ul>
+<li>Does the subject need privilege for a namespace or accress namespace?</li>
+<li>Privilege to a user, group or service acocunt? User in kube is for humain. Some microservice do not need priv at all as they dont interact with kube-apiserver.</li>
+<li>What ressources the subjects need to access. In role definition, need to set ressourcesNames or it will granted all the ressources of the ressource type.</li>
+</ul>
+<p>Kube subjects interact with kube objects. We need to uderstand actual task for rbac properly.</p>
+<h2 id="least-priv-for-kube-workloads">Least Priv for kube Workloads</h2>
+<p>Default service-account for kube workload should have least priv.</p>
+<p>A pod may access ressources on the worker node, its control with the Security Context. Can be configure on the Pod level and Container level.</p>
+<p>Security context for least priv for containers and pods:</p>
+<ul>
+<li>DAC, not running service as root (UID=0)</li>
+<li>SELinux, defines level label, role label, type label</li>
+<li>Privileged mode. Same as root user on node. Disable</li>
+<li>Linux Capabilities. manage action the container can do on the node. Exemple, CAP_AUDIT_WRITE allows process to write to the kernel.</li>
+<li>AppArmor profile. Define capabilites the process owns.</li>
+<li>Secure Computing Mode. White or blacklist the system can call.</li>
+<li>AllowPrivEsc: a process can gain more priv than its parent process.</li>
+</ul>
+<p>PodSecurityPolicy, un kubernetes cluster-level qui controle the attributes of pod relevant to security. Example of following attribute:</p>
+<ul>
+<li>Allows priv container to run</li>
+<li>Allows host-level namespace</li>
+<li>Allows host ports to be used</li>
+<li>Require a read-only root filesystem</li>
+<li>requires a SELinux security context to be used</li>
+<li>Applies seccomp and appArmor profiles to pods</li>
+<li>etc. More on chapter 8.</li>
+</ul>
+<p>We should set ressources limits for workloads.</p>
+<p><strong>When pods or container run in priv mode, they have the same priv as admin user on the nodes. Should never be the case</strong></p>
+<p><img src="NetworkPolicy.png" alt="NetworkPolicy"></p>
+<p>DevOps should consider using a PODSecurityPolicy and a network policy to enforce least privileges across cluster.
+<br></p>
+<h1 id="chapter-5---security-boundaries">Chapter 5 - Security Boundaries</h1>
+<p>Security boundaries: Data layer, network layer and system layer.</p>
+<p>Compared to hypervisors, containers do not provide a strong security boudary. Container enforce restriction at application layer. Can be bypass from the kernel layer.</p>
+<p>Network layer, network policie enforce that.</p>
+<p>data layer, no writing in bin or root folder.  chroot prevent containers from tampering filesystem of other containers.</p>
+<p>Database server exec in /bin is an example of execution crossing a trust boudary.</p>
+<p>Data inserted by an end user into a trusted database is an example of data crossing a trust boudary.</p>
+<p>We can have 3 security domain:</p>
+<ul>
+<li>Kubernetes master component (kube-apiserver, etcd, kube-controller, kube-scheduler).</li>
+<li>Kubernetes worker component</li>
+<li>Kubernetes objects, Pods, services, volumes and namespaces.</li>
+</ul>
+<p>Lever of security Boundary:</p>
+<ul>
+<li>Container - Minimal isolation. Linux Namespace, AppArmor Profiles, seccomp profile</li>
+<li>Pod isolate more than container. Can also bring Security Context, networkPolicy, podSecurityPolicy.</li>
+<li>Nodes. We can use Nodesselector for specified pods to be run. Can use AppArmor and SELinux can help. Host-hardening mechanisms.</li>
+<li>Cluster is a collection of pods, containers and component of master node and worker nodes. Pods and containers running within a cluster are isolated from other cluster at the network and system layer. (A cluster is a group of servers or nodes.)</li>
+<li>Namespaces. Virtual cluster that isolate pods and services. Network Policies can be applied to the namespace lever.</li>
+<li>Kube API-server. Kube API interact with all components. Its a proxy between cluster admin and cluster components.</li>
+</ul>
+<p>By default, each pod have is own network Namespace and IPC namespace. by default, one container dont have knowledge of the other container. Never use host-level (hostNetwork, hostIPC, hostPID or shareProcessNamespace). If so, communication between container is easier and less control.</p>
+<p>Default capabilities give an acceptable security level. Take with grain of salt the aditionnal capabilities to container.</p>
+<p><strong>Network policies</strong></p>
+<p>Pods inside a culster can communicate with each other.</p>
+<p>The file NetworkPolicy have few key element:</p>
+<ul>
+<li>podselector: grouping of Pods which policy applies based on the pods labels.</li>
+<li>Ingress
+<ul>
+<li>IpBlock Ip CIDR range used to external IP block</li>
+<li>NamespaceSelector: Namespace allowed. Among microservices in the same kubernetes cluster</li>
+<li>podSelector. Among microservices in the same kubernetes cluster.</li>
+<li>Ports</li>
+</ul>
+</li>
+<li>egress
+<ul>
+<li>IPblock</li>
+<li>namespaceSelector</li>
+<li>podSelector</li>
+<li>ports</li>
+</ul>
+</li>
+</ul>
+<p><img src="IncomingTraffic.png" alt="IncomingTraffic"></p>
+<p>In the figure, even other pods in the good namespace cant communicate if he dosent have the label from: good</p>
+<h2 id="securing-cluster-components">Securing Cluster Components</h2>
+<p>Kube-Bench, walk through to evaluate security posture.</p>
+<h3 id="securing-kub-apiserver">Securing Kub-APIserver</h3>
+<p>Gateway to the cluster. API Rest to authorize and validate requests for objects. 3 main functions:</p>
+<ul>
+<li>Exposes API for cluster management. For dev and admin for chaging state of cluster.</li>
+<li>Request handling: Validate and processed request to object.</li>
+<li>Internal messaging: Interact with other components to ensure the cluster functions properly.</li>
+</ul>
+<p>A request go throught 3 steps:</p>
+<ul>
+<li>Authentification. Client certifications, bearer tokens, basic Auth.</li>
+<li>Authorization: Abac (attribute-base), RBAC, node authorization and webhooks. Rbac is recommended.</li>
+<li>Admission controller. Check if the request is allow within the cluster.</li>
+</ul>
+<p>You should:</p>
+<ul>
+<li>Disable anonymous auth.</li>
+<li>Disable Basic Auth.</li>
+<li>Disable token auth. (Static tokens). Client certif should be used.</li>
+<li>Kuberlet use HTTPS</li>
+<li>Disable Profiling. Its exposes unnecessary system and program details.</li>
+<li>Disable AlwaysAdmit. Use to admission control plugins.</li>
+<li>Use AlwaysPullImages: This prevents malicious pods from spinning up containers for images that exist on the node.</li>
+<li>Use SecurityContextDeny: only if PodSecurituyPolicy isnot ebabled.. Pods cants modify</li>
+<li>enable auditing.</li>
+<li>Disable AlwaysAllow authorization.</li>
+<li>Enable RBAC Auth.</li>
+<li>Valid certificate authority.</li>
+<li>Enable Service-account-lookup. Kube-apiserver verify that the token of the service account is present in etcd.</li>
+<li>Enable PodSecurityPolicy (and enable admission-plugins). Chapter 5 (security boundaries) use it. Detail in chapter 8 (Securings Pods).</li>
+<li>Use service acocunt key file. - Enables rotations of keys for services accounts. If not specified, kube-apiserver use private key from TLS so sign the service account tokens.</li>
+<li>Enable authorized requests to etcd: &ndash;etcd-certfile and &ndash;</li>
+<li>etcd-keyfile. unidentified request is rejected by etcd.</li>
+<li>Do not disable the ServiceAccount admission controller</li>
+<li>No selfSign for requests.</li>
+<li>Secure connection to etcd.</li>
+<li>Set &ndash;tls-cipher-suites to strong ciphers. &ndash;tls-min-version to 1.2 TLS.</li>
+<li>Enable advances auditing.</li>
+</ul>
+<h3 id="securing-kubelet">Securing Kubelet</h3>
+<p>Kubelet manage life cycle, ensures objects are healthy.</p>
+<p>To secure it:</p>
+<ul>
+<li>Disable Anonymous</li>
+<li>Set authorization mode.</li>
+<li>Rotate Kubelet certificates.</li>
+<li>Provide CA</li>
+<li>Disable read-only port..</li>
+<li>Enable the NodeRestriction admission controller. Allows kubelet only to modify node and pod.</li>
+<li>Restrict access to the Kubelet API with kube-apiserver only.</li>
+</ul>
+<h3 id="securing-etcd">Securing etcd</h3>
+<p>used for data storage: State, config and secrets. Only kube-apiserver shoud have access.</p>
+<p>Should have:</p>
+<ul>
+<li>Retrict node access. Use Linux firewall.</li>
+<li>TLS and valid cert.</li>
+<li>Encrypt data at rest. -encryption-provider-config</li>
+</ul>
+<h3 id="securing-kube-scheduler">Securing Kube-scheduler</h3>
+<p>Kube-scheduler is responsible for assigning node to a pod. Then kubelet executes the pod.</p>
+<p>Should have:</p>
+<ul>
+<li>disable profiling.</li>
+<li>Disable external connections</li>
+<li>Enable AppArmor.</li>
+</ul>
+<h3 id="securing-kube-controller-manager">Securing Kube-controller-manager</h3>
+<p>Kube-controller-manager. Monitors cluster to move the cluster from the current state to the derired state.</p>
+<p>use- service-account-credentials with minimum priviledges.</p>
+<h3 id="securing-coredns">Securing CoreDNS</h3>
+<p>Kube-dns help objects (services, pods, containers) to locate each other. But have been replace with CoreDNS cause of vuln. Offer: DNS resolver, caching response and sidecar (monitors health and metrics for DNS).</p>
+<p>Ensure health plugin is not disabled. (monitors status of CoreDNS).</p>
+<p><strong>Enable istio for CoreDNS</strong>. istio is a service mesh used for service discovery, load bal and auth. Its an external dependecy.</p>
+<h3 id="benchmarking-a-clusters-security-configuration">Benchmarking a cluster&rsquo;s security configuration</h3>
+<p>kube-bench is a tool in Go published by aqua that runs tests documented in the CIS.</p>
+<p><code>$kube-bench node --benchmark cis-1.4</code></p>
+<p>on Azure, AWS and GCp, kube-bech run as a pod.</p>
+<p><code>$ kubectl apply -f job-gke.yaml</code></p>
+<p><code>$ kubectl get pods</code></p>
+<p>Every FAIL status should be mitigated.</p>
+<p>Should be run regularly to monitor the cluster security.</p>
+<p>CIS Benchmarks: <a href="https://www.cisecurity.org/benchmark/kubernetes/">https://www.cisecurity.org/benchmark/kubernetes/</a></p>
+<h1 id="7---authentification-authorization-and-admission-control">7 - Authentification, authorization and Admission Control</h1>
+<p>Open Policy Agent (OPA) open source tool to implement authorization across microservices.</p>
+<p>Kube-apiserver process all requests.</p>
+<p><img src="RequestingParsing.png" alt="RequestingParsing"></p>
+<p>Admission controllers intercept requests that create, update or delete object. 2 categories:</p>
+<ul>
+<li>Mutating. Modify the request they admit.</li>
+<li>Validating</li>
+</ul>
+<p>Kubernetes use many authentification:</p>
+<ul>
+<li>Client certiticates. The most common for production.</li>
+<li>Static tokens. Server uses a static file to read the bearer tokens. Not suitable for prod. Dev only. Cannot be change without restarting API server</li>
+<li>Basic Auth. Cannot be change without restarting API. not for Production.</li>
+<li>Bootstrap tokens. improvisation over static tokens. Its the default auth. Managed and stored as secrets in kube-system.</li>
+<li>Service Account tokens. Created by default at the pods creations. Associated secrets, the CA of the API server and signed token.</li>
+<li>WebHook token. Kube make a api call outside to determine user identity. -authorization-webhook-config-file=<path>.</li>
+<li>Authentication proxy. Can use x-remote request header.</li>
+</ul>
+<p>User impersonation. admin and dev use it to debug auth and authorization policies for users. If user have impersonation priviledge. Example: <code>kubectl apply -f pod.yaml --as=dev-user --as-group=system:dev</code></p>
+<h3 id="kubernetes-authorization">Kubernetes authorization</h3>
+<p>There is different authorization modes:</p>
+<ol>
+<li>Node authorization mode.Grant access to service, endpoints, nodes, pods, secrets and persistent volumes. The kubelet have a username system:node:<name>
+<ol>
+<li>API server uses —authorization-mode=Node flag to use the node authorization module.</li>
+<li>Use with ABAC or RBAC.</li>
+</ol>
+</li>
+<li>ABAC. Validating policies againts attributes of the request.
+2. Each policy have: Version, kind and spec.</li>
+<li>RBAC. Set of permissions and RolBinding. Role and roleBinding are restricted to namespaces. If role span across namespaces, ClusterRole and ClusterRoleBinding can be use.</li>
+<li>WebHooks. Similar for authentificaiton, webhook authorization uses remote API server to check permission.</li>
+</ol>
+<h3 id="admission-controllers">Admission controllers</h3>
+<p>The controller validate and mutate the request before modifying the state.</p>
+<p>Security list:</p>
+<ul>
+<li>AlwaysPullImages. New pods always force image pull. Ensure updated images are used by pods.</li>
+<li>EventRateLimit. Mitigate misbehaving object like high consumption, CPU network.</li>
+<li>LimitRanger. Ensure not violate limit of limitRange object. malicious pods cannot consume excess ressources.</li>
+<li>NodeRestriction. Kubelet gets a username and is only Able to modify the node object and pods on its own node.</li>
+<li>PersistenVolumeClaimResize.</li>
+<li>PodSecurityPolicy.  Determine where the pods run based on security-sensitive configuration of the pods. Can check fields like: Privileged, allowHostPaths, defaultAddCapabilities. See next chapter.</li>
+<li>SecurityContextDeny. Recommended if PodSecurityPolicy is not enabled.</li>
+<li>ServiceAccount is an identity of the pod.</li>
+</ul>
+<h3 id="introduction-to-opa">Introduction to OPA</h3>
+<p>Open source policy engine for policy enforcement in kubernetes. Istio utilize OPA for finer-grained controls. Hosted by CNCF. In kube, often used as a validating webhook.</p>
+<p><img src="OPA.png" alt="OPA"></p>
+<p>To make a decision OPA need: Cluster info, Input Query, policies (defined in a Rego language) To apply policy:</p>
+<p><code>kubectl create configmap pod —from-file=pod-blacklist.rego</code></p>
+<h1 id="chapter-8-securing-kubernetes-pods">Chapter 8. Securing Kubernetes pods</h1>
+<p>Buld stage: Harden image and security attributes of pods (pod templates). Somme security attributes like appArmor, SElinux labels take effect in runtime.</p>
+<p>Secure pods in runtime stage: PodSecurityolicy and kube-psp-advisor.</p>
+<p>Image scanning tool  focus on finding publicly disclosed. But Best practices with secure config ensure minimal attack surface.</p>
+<p>Dockerfile contains series of instructions such as copy files, configure variables, configure open port&hellip;</p>
+<h2 id="cis-docker-benchmarks">CIS Docker benchmarks</h2>
+<p>CIS security recom for container images:</p>
+<ul>
+<li>Create a user for a container image to run microservice. A non-root user.</li>
+<li>Build image from trusted. Public repo may contain malware or crypto miners.Image from scratch as much as possible. Scan image after the build.</li>
+<li>Keep image with the less packages as possible. Remove tools after the building process if possible.</li>
+<li>Scan and rebuild image for security patches.</li>
+<li>Use Content trust for Docker. Use signatures to ensure data integrity between client and docker registry.</li>
+<li>HEALTHCHECK instruction to the container image. base on Health status check, may initiates a new one.</li>
+<li>Don&rsquo;t use RUN apt-get update in a single line. Cause it will use old package repo that is cached. Use —no-cache flag in the docker build.</li>
+<li>Remove setUID and setGID permission from files in images. Can be used for priv-esc. Review file with setuid and setgid.</li>
+<li>Use COPY instead of ADD in dockerfile.</li>
+<li>Do not store secret in dockerfile. Tool exist to extract image file layers. A common mistka is to use ENV instruction.</li>
+<li>Install verified package only. Trusted package repositories.</li>
+</ul>
+<h2 id="configuring-the-security-attributes-of-pods">Configuring the security attributes of pods</h2>
+<p>What privileges a microservice must have to perform tasks. Should harden at pod and container level. 4 major categories:</p>
+<ol>
+<li>Setting host namespaces for pods</li>
+<li>Security context at the container level</li>
+<li>Security context at the pod level</li>
+<li>AppArmor profile.</li>
+</ol>
+<h2 id="setting-host-level-namespace-for-pods">Setting host-level namespace for pods</h2>
+<p>Attributes in the pod</p>
+<ul>
+<li>hostPID: Allows pod to have visibility on all processes on the node.</li>
+<li>hostNetwork: Have visibility on all netork stack on the node.</li>
+<li>hostIPC: Have visibility on all IPC ressource on the node.</li>
+</ul>
+<p>Those attributes should be at FALSE.</p>
+<h2 id="security-context-for-container">Security Context for container</h2>
+<p>We can have 3 containers in one pod. And one of them has to run in priv mode. Here the principal atributes of a security context for containers:</p>
+<ul>
+<li>Privileged. to true makes process runing as root user.</li>
+<li>Capabilities. CAP_SETPCAP, CAP_MKNOD, CAP_AUDIT_WRITE &hellip;
+<ul>
+<li>CAP_SYS_ADMIN and CAP_NETWORK_ADMIN should be added with caution</li>
+</ul>
+</li>
+<li>allowPrivilegeEscalation. Process can gain more privileges than its parent process.</li>
+<li>readOnlyRootFileSystem. Good practice to set it to true. For library, config files&hellip;</li>
+<li>runAsNonRoot.  Should be set to true. Kubelet will prevent the container starting as a root.</li>
+<li>runAsUser.</li>
+</ul>
+<h2 id="apparmor-profiles">APPArmor profiles</h2>
+<p>AppArmor profile defines what the process owns, network ressources and files that can be accessd by the container.</p>
+<p>Its operated through kubectl (its not a pod).</p>
+<p>Writing a robust APpArmor profile is not easy. But basic restrictions like deny directoriers, read-only, etc.</p>
+<p>Bane is a open-source tool can help create appArmor profiles. But AppArmor is still in alpha node.</p>
+<h2 id="the-power-of-podsecuritypolicy">The power of PodSecurityPolicy</h2>
+<p>Policy to evaluate the security attributes defined in the  pods specification. Can be used to block launch of priv pods, limited pod access to the host filesystem. For example, can be control by PodSecurityPolicy: Privileged, hostPID, hostNetwork, hostIPC, allowedCapabilies, defaultAddCapabilites, seLinux.</p>
+<p>To apply PodSecurityPolicy:</p>
+<p><code>$ kubectl apply -f example-psp.yaml</code></p>
+<p>And to verify that PodSecurityPolicy (PSP) has been created:</p>
+<p><code>$ kubectl get psp</code></p>
+<h2 id="kubernetes-podsecuritypolicy-advisor">Kubernetes PodSecurityPolicy Advisor</h2>
+<p>Kube-PSP-advisor is a open source tool from Sysdig. its a kubectl plugin. $ kubectl krew install advise-psp</p>
+<p>scans security attributes and recommends pod securit policies.</p>
+<p>Then, the tool generate multiple recommendation like: HstIPC: true, hostPID, seLinux, allowedCapabilies</p>
+<h2 id="summary">Summary</h2>
+<p>We look at podSecurityPolicy and kube-psp-advisor which facilitates pod security policies.
+Security controls need to be applied from build, deploymen and runtime</p>
+<h1 id="chapter-9---image-scanning-in-pipelines">Chapter 9 - Image scanning in pipelines</h1>
+<p>Anchore Engine, popular open source image scanning tool.
+Vulnerabilities may come from application libraries or tools inside image.</p>
+<p>Sometimes, dev not follow security best practices to write code or download librairies fom untrust sources. And the base image we use.</p>
+<p><code>$ docker history kayzheh/anchore-cli </code> we can see the file layer. When we install new packages or add file to the base, image size increases.</p>
+<p><img src="DockerFileInstruction.png" alt="DockerFileInstruction"></p>
+<p>There is few popular open source image scanning tools available: Anchore, Clair, Trivvy.</p>
+<h2 id="scanning-images-with-anchore-engine">Scanning images with Anchore Engine</h2>
+<p>Not only analyse Docker Images, but also allows user define acceptances policy.
+Anchore Engine will Analyse:</p>
+<ul>
+<li>Image Metadata, Images Layers, OS package such as dep rpm apkg, File Data, Application dependency pakages (ruby, node java, python), file content.</li>
+</ul>
+<p>Deploy Anchore Engine with Helm (package manage tool for kube cluster)</p>
+<p><code>$ helm install anchore-demo stable/anchore-engine</code></p>
+<p>Anchore Engine give multiple microservices:</p>
+<ul>
+<li>API - Accepts image scan request</li>
+<li>Catalog - States of image scan job</li>
+<li>Policy - Loads analysis and performs policy eval.</li>
+<li>Analyzer - Pull images from image registry and perform analysis</li>
+<li>Simplequeue - queues image scanning task</li>
+<li>PostgrSQL - Stores images results and state</li>
+</ul>
+<h2 id="scanning-images-with-anchore-cli">Scanning images with anchore-cli</h2>
+<p>access from API and anchore-cli.</p>
+<h2 id="integrating-image-scaning-in-ci-cd">Integrating image scaning in CI-CD</h2>
+<p>Passing an image scanin the build stage doesnt mean it will pass at the runtime stage. Image scanning should hapen in the build, deployment and the runtime of the image.</p>
+<h2 id="scaning-at-the-build-stage">Scaning at the build stage.</h2>
+<p>There is many CI-CD tool such Junkins, Spinnaker, ScrewDriver. Here, it will be image scanning into a GitHub workflow. Workflow in GitHub is a automated process with multiple jobs. Step of the workflow</p>
+<ul>
+<li>Check out PR Branch</li>
+<li>Build image from branch</li>
+<li>Push image to registry.</li>
+<li>Scan the newly built or pushed image</li>
+<li>Fail the workflow if policy violations</li>
+</ul>
+
+
+
+      </main>
+    </div>
+    
+    <script src="https://www.etienne.ninja/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+
+    
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+  integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq"
+  crossorigin="anonymous"
+/>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+  crossorigin="anonymous"
+></script>
+
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+
+    
+  
+
+  </body>
+</html>
