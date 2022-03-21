@@ -7,17 +7,21 @@ Note: 9/10
 image: "cover.jpg"
 ---
 
-Comme j'ai lu le livre devant mon ordinateur et non sur mon téléphone, mes notes sont différente que des __Highlights__.
+**Comme j'ai lu le livre devant mon ordinateur et non sur mon téléphone, ce ne sont pas des highlights, mais des notes durant ma lecture.**
 
 
+<br><br><br>
 
 
+----------
+# Chapitre 1.
 
 Kube réponds aux scaling, cout et les délais des cycle de déploiement. L'explosion des microservice amene une complexité aux devOps. différents language et interpreteur. différents packages, différentes config. C'est la que docker règle bien des problèmes. Docker Swarm est renommé Docker Enterprise Edition. Comme Conteneur orchestration Kubernetes represente 77% du marché. Par rapport a OpenShift (9%), Swarm (5%), Mesos (4%).
 
 Il y a deux types de nodes: Master et worker nodes. Le control plane (Kube-APIserver) roule sur le master nodes. Les worker sont des Kubelet.
 
 ![MasterAndWorknode](MasterAndWorknode.png)
+
 
 
 1. kube-apiserver: Controlplane. valide et vconfigure pour les objets. un object est comme un pod, un service ou un controle.
