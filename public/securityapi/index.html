@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://www.etienne.ninja/css/bootstrap.min.css">
   
   
-  <title>La sécurité des API | Blogue d&#39;Étienne</title>
+  <title>(DRAFT) La sécurité des API | Blogue d&#39;Étienne</title>
   <style>
 .container {
   max-width: 800px;
@@ -156,7 +156,7 @@ audio {
       <main id="main">
         
 
-<h1>La sécurité des API</h1>
+<h1>(DRAFT) La sécurité des API</h1>
 
 
 <i data-feather="calendar"></i> <time datetime="2021-04-24">Apr 24, 2021</time>
@@ -171,19 +171,19 @@ audio {
 
 <br><br>
 <h1 id="introduction">Introduction</h1>
-<p>Avant de vous lancer dans la lecture, assurez-vous de bien comprendre certains principes de sécurité pour suivre. Ce n’est pas un article accessible aux nouveaux en sécurité. Par exemple, vous devez connaitre: la différence entre le mTLS et TLS, un JWT, clé privé/public, header d’un packet. Le livre est une combinaison de théorie et de pratique. Je n’expliquerai pas les étapes de développement et de déploiement d’un API avec un framework comme l’explique le livre.</p>
-<p>Le livre commence avec une petite introduction aux vieilles applications legacy dites &ldquo;monolithique&rdquo;. La majorité des applications monolithiques ont seulement quelques points d&rsquo;entrées. La plupart des composantes d&rsquo;une application monolithique ne sont pas exposées aux autres services. Par conséquent, la sécurité est renforcée de façon centrale à l&rsquo;application et chaque composante n&rsquo;ont pas besoin de faire des vérifications de sécurité avant d&rsquo;exécuter la requête. Les communications se font avec les composante interne de l&rsquo;application, dans le même processus. Mais l&rsquo;arrivé des microservices explose le nombre d&rsquo;entrées. Par conséquent, on augmente la surface d&rsquo;attaque qui amène des défis de sécurisation.</p>
+<p>Avant de vous lancer dans la lecture, assurez-vous de bien comprendre certains principes de sécurité pour suivre. Ce n’est pas un article accessible aux nouveaux en sécurité. Le livre est une combinaison de théorie et de pratique. Je n’expliquerai pas les étapes de développement et de déploiement d’un API avec un framework comme l’explique le livre.</p>
+<p>Le livre commence avec une petite introduction aux vieilles applications legacy dites &ldquo;monolithique&rdquo;. La majorité des applications monolithiques ont quelques points d&rsquo;entrées seulement. Généralement, les composantes d&rsquo;une application monolithique ne sont pas exposées aux autres services. Par conséquent, la sécurité est renforcée de façon centrale à l&rsquo;application et chaque composante n&rsquo;ont pas besoin de faire des vérifications de sécurité avant d&rsquo;exécuter la requête. Les communications se font avec les composante interne de l&rsquo;application, dans le même processus. Mais l&rsquo;arrivé des microservices explose le nombre d&rsquo;entrées. Par conséquent, on augmente la surface d&rsquo;attaque qui amène des défis de sécurisation.</p>
 <blockquote class="blockquote text-right">
   <p class="mb-0 small">"The security of a system is no stronger than the strength of its weakest link"</p>
   <footer class="blockquote-footer">API security. Section 1.2.1</footer>
 </blockquote>
 <p><img src="Monolithic.jpeg" alt="Monolitique vs microservices">
 <small>Source: <a href="https://www.bmc.com/blogs/microservices-architecture/">BMC</a></small></p>
-<p>Mais appliquer la sécurité à chaque microservice devient rapidement lourd pour les développeurs et amène une charge au réseau si le microservice doit, pour chaque requête, faire valider le jeton au gestionnaire d&rsquo;identité fédéré (STS). On parle ici d&rsquo;un service comme Auth0, Okta ou Azure AD.</p>
+<p>Appliquer la sécurité à chaque microservice devient rapidement lourd pour les développeurs et amène une charge au réseau si le microservice doit, pour chaque requête, faire valider le jeton au gestionnaire d&rsquo;identité fédéré (STS). On parle ici d&rsquo;un service comme Auth0, Okta ou Azure AD.</p>
 <p><img src="TokenValidation.png" alt="Validation du jeton"></p>
 <p><small>Source: Livre Microservice in Action</small></p>
 <p>Dans une application monolitique, les composantes internes partage la même session utilisateur, malheureusement, nous n&rsquo;avons pas ce luxe avec les microservices. Déjà que nous explosons le nombre de porte d&rsquo;entrée, il faut aussi propager entre les microservices le context de l&rsquo;utilisateur (user context).
-Le livre introduit ensuite des concepts fondamentaux à la sécurité que je vais simplement survoler ici:</p>
+Le livre introduit des concepts fondamentaux à la sécurité que je vais simplement survoler ici:</p>
 <ol>
 <li>Authentification. On parle ici d&rsquo;un requérant qui peut-être:
 <ul>
@@ -205,7 +205,7 @@ Le livre introduit ensuite des concepts fondamentaux à la sécurité que je vai
 </li>
 <li>Confidentialité
 <ul>
-<li>Encore le TLS ;) Si vous ne savez pas pourquoi, je ne vous suggère pas de lire la suite.</li>
+<li>Encore le TLS ;)</li>
 <li>Il amène un rappelle important concernant les proxy qui supportent deux modes: TLS Bridging et TLS tunneling. Les bridging termine les connections TLS et en débute une autre. La donnée passe donc en clair sur le proxy, vous ne devez donc pas lui faire confiance si vous ne le contrôlez pas.</li>
 </ul>
 </li>
@@ -220,8 +220,8 @@ Le livre introduit ensuite des concepts fondamentaux à la sécurité que je vai
 <p><small>Source: <a href="https://www.slideserve.com/kovit/is3220-information-technology-infrastructure-security-unit-2-network-security-basics">IS3220</a></small></p>
 <p>Je vais discuter de 4 sujets pris du livre directement:</p>
 <ol>
-<li>Jeton Opaque, refresh, JWT&hellip;</li>
-<li>La délégation</li>
+<li>Les jetons de types opaques, d&rsquo;actualisation et le JWT.</li>
+<li>La délégation des droits</li>
 <li>La sécurité à la frontière.
 <ul>
 <li>On parle ici du chemin entre l&rsquo;utilisateur et l&rsquo;API Gateway. Ou encore la sécurité Nord-Sud.</li>
@@ -229,12 +229,12 @@ Le livre introduit ensuite des concepts fondamentaux à la sécurité que je vai
 </li>
 <li>La sécurité entre les API
 <ul>
-<li>Qu&rsquo;on appelle la sécurité &ldquo;Est-Ouest&rdquo;. Service Mesh.</li>
+<li>Qu&rsquo;on appelle la sécurité &ldquo;Est-Ouest&rdquo;. L&rsquo;architecture de type service mesh.</li>
 </ul>
 </li>
 </ol>
-<p>Généralement, l’API gateway concerne la sécurité Nord/Sud (Edge security) et le service mesh gère la sécurité Est/Ouest (sécurité entre les microservices).</p>
-<h1 id="jeton-opaque-refresh-jwt">Jeton Opaque, refresh, JWT&hellip;</h1>
+<p><strong>Généralement, l’API gateway concerne la sécurité Nord/Sud (Edge security) et le service mesh gère la sécurité Est/Ouest (sécurité entre les microservices).</strong></p>
+<h1 id="les-jetons-de-types-opaques-dactualisation-et-le-jwt">Les jetons de types opaques, d&rsquo;actualisation et le JWT.</h1>
 <p>Lorsque l&rsquo;API Gateway valide le jeton au STS, ça sappelle un <em>token introspection</em>. Mais si chaque requête fait par le client génère une requête au STS, la performance du STS se retrouve affecter.</p>
 <p>On se retrouve alors avec :</p>
 <ul>
@@ -257,15 +257,15 @@ Le livre introduit ensuite des concepts fondamentaux à la sécurité que je vai
 </ol>
 <p>Bien que l&rsquo;access token est souvent en forme JWT, ils peuvent être opaque aussi. C&rsquo;est souvent le cas lorsque le Gateway agit comme STS.</p>
 <h1 id="la-délégation">La délégation</h1>
-<p>Un sujet important qu&rsquo;amène la sécurité aujourd&rsquo;hui est le principe de délégation des accès. Vous avez surement déjà vu les fameux &ldquo;Connectez-vous avec Google ou Facebook&rdquo;. avec les consentements . C&rsquo;est le protocol OAUTH 2.0 en arrière. L’utilisateur délègue ses accès à L’application. L’application récupère un access token à l’authorization Server et fait ensuite une action au microservice.
+<p>Un sujet important qu&rsquo;amène la sécurité aujourd&rsquo;hui est le principe de délégation des accès. Vous avez surement déjà vu les fameux &ldquo;Connectez-vous avec Google ou Facebook&rdquo;. avec les consentements . C&rsquo;est le protocole OAUTH 2.0 en arrière. L’utilisateur délègue ses accès à l’application. L’application récupère un access token à l’authorization Server et fait ensuite une action au microservice.
 Chapitre 3: Securing North/south traffic with an API Gateway “In an ideal world, the microservice developer should worry only about the business functionnality of a microservice, and the rest should be handled by specialized components with less hassle. The API Gateway and service Mesh are two architectural patterns that help us reach that ideal.” Page 58.
-Un aspect clé des bonnes pratiques des microservices est le principe de responsabilité unique. Chaque microservice devrait exécuter une seule fonction. Sans paterns d’architecture, un microservice se trouve responsable : D’extraire le jeton de l’entête, communiquer avec le STS pour valider le jeton, gérer la réponse du STS et si c’est positif, exécuter la tâche business que le microservice est sensé faire. La combinaison de la sécurité et la tâche business introduis une complexité et une couche de gestion suplémentaire au microservice. Sans oublier que l’augmentation du nombre de microservice augmente aussi le nombre de requête au STS. L’utilisation d’un API Gateway permet d’avoir un meilleur découplage de la sécurité et le microservice.</p>
+Un aspect clé des bonnes pratiques des microservices est le principe de responsabilité unique. Chaque microservice devrait exécuter une seule fonction. Sans paterns d’architecture, un microservice se trouve responsable : D’extraire le jeton de l’entête, communiquer avec le STS pour valider le jeton, gérer la réponse du STS et si c’est positif, exécuter la tâche business que le microservice est sensé faire. La combinaison de la sécurité et la tâche business introduis une complexité et une couche de gestion supplémentaire au microservice. Sans oublier que l’augmentation du nombre de microservices augmente aussi le nombre de requêtes au STS. L’utilisation d’un API Gateway permet d’avoir un meilleur découplage de la sécurité et le microservice.</p>
 <h1 id="1-sécurité-à-la-frontière">1. Sécurité à la frontière</h1>
 <p>Les API (<a href="https://en.wikipedia.org/wiki/API">Application Programming Interface</a>) sont ce que les entreprises décident d’exposer sur internet. Les microservices qui ont besoin d’être accèder par l’externe sont exposés comme un API via un API Gateway. En règle général, un API ne devrait <strong>jamais</strong> être directement accessible. Les flux doivent être intérompu par le gateway. L’API Gateway renforce plusieurs éléments de sécurité incluant l’athentification, les authorizations, “throttling” (limite le nombre de requête pour un jeton) et réalise des validations du contenu.</p>
 <p><img src="gatewayAPI.png" alt="Sécurité du Gateway"></p>
 <h2 id="11-pourquoi-ne-pas-utiliser-du-basic-authentification--323">1.1 Pourquoi ne pas utiliser du Basic Authentification ? (3.2.3)</h2>
 <p>Le basic auth est simplement une combinaison d’un nom d’utilisateur et d’un mot de passe envoyé à l’API dans le header de la requête. Cette solution ne permet pas de déléguer des accès à une application tierce. Reprenons l’exemple de sitecomique123.com, si vous voulez vous authentifier avec Facebook, vous leurs donnerez alors votre username et password de Facebook. L’application pourait allors faire ce qu’il veut avec votre compte! De plus, le basic auth utilise un mot de passe static avec une durée de vie indéterminer. Alors l’application sitecomique123.com gardera indéfiniement votre mot de passe. Et une règle général en sécurité: Le plus longtemps l’information est sauvegardé à un endroit, plus les chances de compromission sont élevé.
-Parler aussi des enjeux de sécurité. dans le header</p>
+Nous pouvons aussi avoir des enjeux de sécurité d&rsquo;avoir un username/password dans le header:</p>
 <h2 id="12-et-pourquoi-ne-pas-utiliser-mtls">1.2 Et pourquoi ne pas utiliser mTLS?</h2>
 <p>Mutual Transport Layer Security est un mécanisme où l’application cliente vérifie le serveur et le serveur vérifie l’aplication cliente en échangeant leurs certificats. Le mtls résoud deux problèmes par rapport au basic auth: Une durée de vie limité dans le temps qui force leurs rotation et, surtout, le mTLS permet que la clé privé associé au certificat ne quite jamais le propriétaire. Mais comme le basic Auth, mtls ne permet pas non plus la délégation d’accès. Le mtls est principalement utilisé pour sécuriser la communication entre systèmes seulement et non pour des utilisateurs.</p>
 <h2 id="13-et-pourquoi-oath-20">1.3 Et pourquoi Oath 2.0?</h2>
@@ -292,7 +292,7 @@ Les authorisations service à service
 Évidament, nous ne voulons pas permetre aux API de communiquer de façon libre entre eux. Le contrôle d’accès se fait habituellement d’une des deux façons:</li>
 </ol>
 </li>
-<li>Central policy decision point (PDP)
+<li>Central policy decision pogint (PDP)
 <ol>
 <li>Chaque fois que le service doit valider une requête, il fait une requête au PDP. Mais cette méthode amène une grosse dépendance aux PDP et ajoute une latence aux communications</li>
 </ol>

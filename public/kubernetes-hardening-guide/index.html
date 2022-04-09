@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://www.etienne.ninja/css/bootstrap.min.css">
   
   
-  <title>Tags | Blogue d&#39;Étienne</title>
+  <title>Kubernetes Hardening Guide | Blogue d&#39;Étienne</title>
   <style>
 .container {
   max-width: 800px;
@@ -130,13 +130,11 @@ audio {
       
       
       
-       
-        
         
       
     
     
-    <a class="nav-link nav-link-active" href="/tags/"><i data-feather="tag"></i> Mots clés</a>
+    <a class="nav-link " href="/tags/"><i data-feather="tag"></i> Mots clés</a>
   
     
     
@@ -158,43 +156,70 @@ audio {
       <main id="main">
         
 
-<h1>Tags</h1>
 
 
-  <p>
-    <a class="btn btn-outline-dark font-125" href="/tags/g%C3%A9n%C3%A9ral/">
-      <span class="badge badge-dark">12</span> Général
-      
-    </a>
-  </p>
+<br />
 
-  <p>
-    <a class="btn btn-outline-dark font-125" href="/tags/s%C3%A9curit%C3%A9-201/">
-      <span class="badge badge-dark">9</span> Sécurité 201
-      
-    </a>
-  </p>
 
-  <p>
-    <a class="btn btn-outline-dark font-125" href="/tags/argent/">
-      <span class="badge badge-dark">5</span> Argent
-      
-    </a>
-  </p>
+<div class="card mb-3 border-0">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="cover.png" class="card-img">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title">Kubernetes Hardening Guide</h2>
+        <p class="card-text ">Auteur: National Security Agency</p> 
+        <p class="card-text ">Ma note: N/A</p> 
+        <p class="card-text">
 
-  <p>
-    <a class="btn btn-outline-dark font-125" href="/tags/science/">
-      <span class="badge badge-dark">1</span> Science
-      
-    </a>
-  </p>
+<i data-feather="calendar"></i> <time datetime="2022-03-07">Mar 7, 2022</time>
 
-  <p>
-    <a class="btn btn-outline-dark font-125" href="/tags/s%C3%A9curit%C3%A9-101/">
-      <span class="badge badge-dark">1</span> Sécurité 101
-      
-    </a>
-  </p>
+
+  <br>
+  <i data-feather="tag"></i>
+  
+  
+  <a class="btn btn-sm btn-outline-dark tag-btn" href="https://www.etienne.ninja/tags/s%C3%A9curit%C3%A9-201">Sécurité 201</a>
+  
+</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<h2>Mes highlights</h2> 
+<br>
+
+
+<p>My notes from this ressources:
+<a href="https://media.defense.gov/2021/Aug/03/2002820425/-1/-1/0/CTR_Kubernetes_Hardening_Guidance_1.1_20220315.PDF">https://media.defense.gov/2021/Aug/03/2002820425/-1/-1/0/CTR_Kubernetes_Hardening_Guidance_1.1_20220315.PDF</a></p>
+<hr>
+<p>-&gt; Supply chain risks are often challenging to mitigate and can arise in the container build cycle or infrastructure acquisition.
+-&gt; Malicious threat actors can exploit vulnerabilities and misconfigurations in components of the Kubernetes architecture, such as the control plane, worker nodes, or containerized applications.
+-&gt; Insider threats can be administrators, users, or cloud service providers. Insiders with special access to an organization’s Kubernetes  nfrastructure may be able to abuse these privileges.</p>
+<hr>
+<p>This guide details the following mitigations:</p>
+<ul>
+<li>Scan containers and Pods for vulnerabilities or misconfigurations.</li>
+<li>Run containers and Pods with the least privileges possible.</li>
+<li>Use network separation to control the amount of damage a compromise can
+cause.</li>
+<li>Use firewalls to limit unneeded network connectivity and use encryption to protect confidentiality.</li>
+<li>Use strong authentication and authorization to limit user and administrator access as well as to limit the attack surface.</li>
+<li>Capture and monitor audit logs so that administrators can be alerted to potential malicious activity.</li>
+<li>Periodically review all Kubernetes settings and use vulnerability scans to ensure risks are appropriately accounted for and security patches are applied.</li>
+</ul>
+<hr>
+<p><img src="HighLevelView.png" alt="HighLevelView"></p>
+<hr>
+<p>Kubernetes clusters can be complex to secure and are often abused in compromises that exploit their <strong>misconfigurations</strong>.</p>
+<hr>
+<p>Kubernetes can be a valuable target for data or compute power theft.</p>
+<hr>
+<p>Cyber actors seeking computational power (often for cryptocurrency mining) are also drawn to Kubernetes to harness the underlying infrastructure</p>
 
 
 

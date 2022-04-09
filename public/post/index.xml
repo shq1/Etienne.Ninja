@@ -8,12 +8,13 @@
     <language>fr-ca</language>
     <lastBuildDate>Sun, 07 Mar 2021 12:04:44 -0500</lastBuildDate><atom:link href="https://www.etienne.ninja/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>La sécurité des API</title>
+      <title>(DRAFT) La sécurité des API</title>
       <link>https://www.etienne.ninja/securityapi/</link>
       <pubDate>Sat, 24 Apr 2021 12:20:27 -0500</pubDate>
       
       <guid>https://www.etienne.ninja/securityapi/</guid>
-      <description>Introduction Avant de vous lancer dans la lecture, assurez-vous de bien comprendre certains principes de sécurité pour suivre. Ce n’est pas un article accessible aux nouveaux en sécurité. Par exemple, vous devez connaitre: la différence entre le mTLS et TLS, un JWT, clé privé/public, header d’un packet. Le livre est une combinaison de théorie et de pratique. Je n’expliquerai pas les étapes de développement et de déploiement d’un API avec un framework comme l’explique le livre.</description>
+      <description>Introduction Avant de vous lancer dans la lecture, assurez-vous de bien comprendre certains principes de sécurité pour suivre. Ce n’est pas un article accessible aux nouveaux en sécurité. Le livre est une combinaison de théorie et de pratique. Je n’expliquerai pas les étapes de développement et de déploiement d’un API avec un framework comme l’explique le livre.
+Le livre commence avec une petite introduction aux vieilles applications legacy dites &amp;ldquo;monolithique&amp;rdquo;. La majorité des applications monolithiques ont quelques points d&amp;rsquo;entrées seulement.</description>
     </item>
     
     <item>

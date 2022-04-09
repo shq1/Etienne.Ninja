@@ -8,6 +8,16 @@
     <language>fr-ca</language>
     <lastBuildDate>Mon, 07 Mar 2022 12:20:27 -0500</lastBuildDate><atom:link href="https://www.etienne.ninja/tags/s%C3%A9curit%C3%A9-201/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Kubernetes Hardening Guide</title>
+      <link>https://www.etienne.ninja/kubernetes-hardening-guide/</link>
+      <pubDate>Mon, 07 Mar 2022 12:20:27 -0500</pubDate>
+      
+      <guid>https://www.etienne.ninja/kubernetes-hardening-guide/</guid>
+      <description>My notes from this ressources: https://media.defense.gov/2021/Aug/03/2002820425/-1/-1/0/CTR_Kubernetes_Hardening_Guidance_1.1_20220315.PDF
+ -&amp;gt; Supply chain risks are often challenging to mitigate and can arise in the container build cycle or infrastructure acquisition. -&amp;gt; Malicious threat actors can exploit vulnerabilities and misconfigurations in components of the Kubernetes architecture, such as the control plane, worker nodes, or containerized applications. -&amp;gt; Insider threats can be administrators, users, or cloud service providers. Insiders with special access to an organization’s Kubernetes nfrastructure may be able to abuse these privileges.</description>
+    </item>
+    
+    <item>
       <title>Mastering Azure Security</title>
       <link>https://www.etienne.ninja/mastering-azure-security/</link>
       <pubDate>Mon, 07 Mar 2022 12:20:27 -0500</pubDate>
@@ -20,12 +30,13 @@
     </item>
     
     <item>
-      <title>La sécurité des API</title>
+      <title>(DRAFT) La sécurité des API</title>
       <link>https://www.etienne.ninja/securityapi/</link>
       <pubDate>Sat, 24 Apr 2021 12:20:27 -0500</pubDate>
       
       <guid>https://www.etienne.ninja/securityapi/</guid>
-      <description>Introduction Avant de vous lancer dans la lecture, assurez-vous de bien comprendre certains principes de sécurité pour suivre. Ce n’est pas un article accessible aux nouveaux en sécurité. Par exemple, vous devez connaitre: la différence entre le mTLS et TLS, un JWT, clé privé/public, header d’un packet. Le livre est une combinaison de théorie et de pratique. Je n’expliquerai pas les étapes de développement et de déploiement d’un API avec un framework comme l’explique le livre.</description>
+      <description>Introduction Avant de vous lancer dans la lecture, assurez-vous de bien comprendre certains principes de sécurité pour suivre. Ce n’est pas un article accessible aux nouveaux en sécurité. Le livre est une combinaison de théorie et de pratique. Je n’expliquerai pas les étapes de développement et de déploiement d’un API avec un framework comme l’explique le livre.
+Le livre commence avec une petite introduction aux vieilles applications legacy dites &amp;ldquo;monolithique&amp;rdquo;. La majorité des applications monolithiques ont quelques points d&amp;rsquo;entrées seulement.</description>
     </item>
     
     <item>
