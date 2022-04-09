@@ -2,14 +2,15 @@
 title: "(DRAFT) La sécurité des API"
 tags: ["Sécurité 201"]
 date: 2021-04-24T12:20:27-05:00
+draft: true
 ---
 
 # Introduction
-Avant de vous lancer dans la lecture, assurez-vous de bien comprendre certains principes de sécurité pour suivre. Ce n’est pas un article accessible aux nouveaux en sécurité. Par exemple, vous devez connaitre: la différence entre le mTLS et TLS, un JWT, clé privé/public, header d’un packet. Le livre est une combinaison de théorie et de pratique. Je n’expliquerai pas les étapes de développement et de déploiement d’un API avec un framework comme l’explique le livre.
+Avant de vous lancer dans la lecture, assurez-vous de bien comprendre certains principes de sécurité pour suivre. Ce n’est pas un article accessible aux nouveaux en sécurité. Le livre est une combinaison de théorie et de pratique. Je n’expliquerai pas les étapes de développement et de déploiement d’un API avec un framework comme l’explique le livre.
 
 
 
-Le livre commence avec une petite introduction aux vieilles applications legacy dites "monolithique". La majorité des applications monolithiques ont seulement quelques points d'entrées. La plupart des composantes d'une application monolithique ne sont pas exposées aux autres services. Par conséquent, la sécurité est renforcée de façon centrale à l'application et chaque composante n'ont pas besoin de faire des vérifications de sécurité avant d'exécuter la requête. Les communications se font avec les composante interne de l'application, dans le même processus. Mais l'arrivé des microservices explose le nombre d'entrées. Par conséquent, on augmente la surface d'attaque qui amène des défis de sécurisation.
+Le livre commence avec une petite introduction aux vieilles applications legacy dites "monolithique". La majorité des applications monolithiques ont quelques points d'entrées seulement. Généralement, les composantes d'une application monolithique ne sont pas exposées aux autres services. Par conséquent, la sécurité est renforcée de façon centrale à l'application et chaque composante n'ont pas besoin de faire des vérifications de sécurité avant d'exécuter la requête. Les communications se font avec les composante interne de l'application, dans le même processus. Mais l'arrivé des microservices explose le nombre d'entrées. Par conséquent, on augmente la surface d'attaque qui amène des défis de sécurisation.
 
 <blockquote class="blockquote text-right">
   <p class="mb-0 small">"The security of a system is no stronger than the strength of its weakest link"</p>
@@ -19,14 +20,14 @@ Le livre commence avec une petite introduction aux vieilles applications legacy 
 ![Monolitique vs microservices](Monolithic.jpeg)
 <small>Source: [BMC](https://www.bmc.com/blogs/microservices-architecture/)</small>
 
-Mais appliquer la sécurité à chaque microservice devient rapidement lourd pour les développeurs et amène une charge au réseau si le microservice doit, pour chaque requête, faire valider le jeton au gestionnaire d'identité fédéré (STS). On parle ici d'un service comme Auth0, Okta ou Azure AD.
+Appliquer la sécurité à chaque microservice devient rapidement lourd pour les développeurs et amène une charge au réseau si le microservice doit, pour chaque requête, faire valider le jeton au gestionnaire d'identité fédéré (STS). On parle ici d'un service comme Auth0, Okta ou Azure AD.
 
 ![Validation du jeton](TokenValidation.png)
 
 <small>Source: Livre Microservice in Action</small>
 
 Dans une application monolitique, les composantes internes partage la même session utilisateur, malheureusement, nous n'avons pas ce luxe avec les microservices. Déjà que nous explosons le nombre de porte d'entrée, il faut aussi propager entre les microservices le context de l'utilisateur (user context).
-Le livre introduit ensuite des concepts fondamentaux à la sécurité que je vais simplement survoler ici:
+Le livre introduit des concepts fondamentaux à la sécurité que je vais simplement survoler ici:
 1. Authentification. On parle ici d'un requérant qui peut-être:
     * Une application qui demande l’accès de la part de l’utilisateur (webApp, mobile app). 
     * Un système qui accède directement à un microservice. 
@@ -49,17 +50,17 @@ La base de la sécurité au finale:
 
 
 Je vais discuter de 4 sujets pris du livre directement:
-1. Jeton Opaque, refresh, JWT...
-2. La délégation
+1. Les jetons de types opaques, d'actualisation et le JWT.
+2. La délégation des droits
 3. La sécurité à la frontière.
     * On parle ici du chemin entre l'utilisateur et l'API Gateway. Ou encore la sécurité Nord-Sud.
 4. La sécurité entre les API 
-    * Qu'on appelle la sécurité "Est-Ouest". Service Mesh. 
+    * Qu'on appelle la sécurité "Est-Ouest". L'architecture de type service mesh. 
 
-Généralement, l’API gateway concerne la sécurité Nord/Sud (Edge security) et le service mesh gère la sécurité Est/Ouest (sécurité entre les microservices).
+**Généralement, l’API gateway concerne la sécurité Nord/Sud (Edge security) et le service mesh gère la sécurité Est/Ouest (sécurité entre les microservices).**
 
 
-# Jeton Opaque, refresh, JWT...
+# Les jetons de types opaques, d'actualisation et le JWT.
 Lorsque l'API Gateway valide le jeton au STS, ça sappelle un *token introspection*. Mais si chaque requête fait par le client génère une requête au STS, la performance du STS se retrouve affecter. 
 
 On se retrouve alors avec :
@@ -128,10 +129,12 @@ Il y a trois méthodes possible pour gérer l’authentification service à serv
     1. Contrairement au mTLS, JWT travaille au niveau applicatif et non au niveau transport, c'est donc un désavantage pour le développeurs qui devront gérer le jeton. La communication est quand même encapsuler par du TLS. La signature du JWT peut se faire par le microservice lui même ou par le STS. 
 Les authorisations service à service
 Évidament, nous ne voulons pas permetre aux API de communiquer de façon libre entre eux. Le contrôle d’accès se fait habituellement d’une des deux façons:
-1. Central policy decision point (PDP) 
+1. Central policy decision pogint (PDP) 
     1. Chaque fois que le service doit valider une requête, il fait une requête au PDP. Mais cette méthode amène une grosse dépendance aux PDP et ajoute une latence aux communications 
 2. Le PDP local (embedded) 
     1. Dans cette situation, les règles d’autorisation sont poussez localement aux microserviecs. Nous avons donc un PAP (Policy administration point) qui défini les règles et pousse ces règles aux services (message Queue) ou API pull data. 
 
 
 Je n'ai focusé que sur une petite partie du livre. Je le recommande pour tous ceux qui souhaitent avoir une meilleurs connaissance de la sécurité des API, leurs développements de façon sécuritaire et de leurs déploiement.
+
+
