@@ -1,7 +1,7 @@
 ---
 title: "The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness"
 tags: ["Argent"]
-date: 2022-04-16T12:20:27-05:00
+date: 2022-04-15T12:20:27-05:00
 note: "10/10"
 image: cover.jpg
 auteur: Morgan Housel
