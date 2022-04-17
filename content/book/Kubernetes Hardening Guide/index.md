@@ -4,7 +4,7 @@ tags: ["Sécurité 201"]
 date: 2022-03-07T12:20:27-05:00
 Auteur: "National Security Agency"
 Note: N/A
-image: "cover.png"
+image: "cover.jpg"
 ---
 
 My notes from this ressources:
